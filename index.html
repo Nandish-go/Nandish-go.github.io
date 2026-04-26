@@ -4,22 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nandish Gowda | Systems Engineer | MBSE | Requirements Engineering</title>
-  <meta name="description" content="Portfolio of Nandish Gowda, Systems Engineer focused on MBSE, Requirements Engineering, SysML, V-Model traceability, and virtual validation." />
+  <title>Nandish Gowda | Systems Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Nandish Gowda, Systems Engineer focused on MBSE, Requirements Engineering, SysML, traceability, and virtual validation." />
 
   <style>
     :root {
-      --bg: #f7f8fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #5f6b7a;
-      --soft: #eef2f7;
-      --line: #dfe4ec;
-      --blue: #2457d6;
-      --blue-soft: #eaf0ff;
-      --dark: #111827;
-      --shadow: 0 10px 28px rgba(17, 24, 39, 0.07);
-      --radius: 18px;
+      --paper: #f7efe3;
+      --paper-2: #fffaf2;
+      --ink: #18212f;
+      --muted: #687385;
+      --line: #e5d8c5;
+      --card: #fffdf8;
+      --forest: #2f6f5e;
+      --forest-soft: #e2eee8;
+      --terracotta: #c86f47;
+      --terracotta-soft: #f4dfd3;
+      --gold: #d9a441;
+      --navy: #22314a;
+      --shadow: 0 22px 60px rgba(53, 39, 24, 0.11);
+      --radius: 28px;
     }
 
     * {
@@ -29,10 +32,13 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 111, 71, 0.18), transparent 26rem),
+        radial-gradient(circle at 90% 5%, rgba(47, 111, 94, 0.16), transparent 30rem),
+        var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
     }
 
     a {
@@ -40,253 +46,339 @@
     }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 248, 251, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      z-index: 30;
+      background: rgba(247, 239, 227, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 216, 197, 0.9);
     }
 
     .nav {
-      height: 68px;
+      height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       text-decoration: none;
-      font-weight: 800;
-      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.02em;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper-2);
       display: grid;
       place-items: center;
-      background: var(--dark);
-      color: white;
       font-size: 14px;
-      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(24, 33, 47, 0.22);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
-      color: var(--muted);
+      gap: 20px;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--navy);
     }
 
     .nav-links a {
       text-decoration: none;
+      opacity: 0.78;
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      opacity: 1;
+      color: var(--terracotta);
     }
 
-    .nav-contact {
-      background: var(--dark);
-      color: white !important;
-      padding: 8px 13px;
+    .nav-cta {
+      background: var(--ink);
+      color: var(--paper-2) !important;
+      opacity: 1 !important;
+      padding: 10px 15px;
       border-radius: 999px;
     }
 
     .hero {
-      padding: 70px 0 42px;
-      border-bottom: 1px solid var(--line);
+      padding: 74px 0 48px;
     }
 
-    .hero-grid {
+    .hero-layout {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 42px;
-      align-items: start;
+      grid-template-columns: 1fr 420px;
+      gap: 46px;
+      align-items: stretch;
     }
 
-    .eyebrow {
-      display: inline-block;
-      color: var(--blue);
-      background: var(--blue-soft);
-      border: 1px solid #dbe6ff;
-      padding: 7px 12px;
-      border-radius: 999px;
+    .hero-left {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .label {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 20px;
+    }
+
+    .label::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--forest);
+      display: inline-block;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 6vw, 64px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      max-width: 780px;
-    }
-
-    .subtitle {
-      margin: 18px 0 0;
-      font-size: clamp(20px, 2vw, 25px);
-      color: var(--text);
-      font-weight: 700;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
       max-width: 820px;
     }
 
-    .hero-text {
-      margin: 18px 0 0;
+    .title-line {
+      display: block;
+    }
+
+    .title-accent {
+      color: var(--terracotta);
+    }
+
+    .intro {
+      margin: 28px 0 0;
+      max-width: 780px;
+      font-size: clamp(21px, 2.2vw, 30px);
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    .intro strong {
+      color: var(--ink);
+    }
+
+    .supporting {
+      margin: 22px 0 0;
+      max-width: 720px;
       color: var(--muted);
       font-size: 17px;
-      max-width: 780px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .hero-meta span {
-      background: white;
-      border: 1px solid var(--line);
-      padding: 7px 10px;
-      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 30px;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      padding: 11px 16px;
-      border-radius: 12px;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 17px;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 900;
       border: 1px solid var(--line);
-      background: white;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      background: var(--card);
+      color: var(--ink);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow);
-      border-color: #cbd5e1;
     }
 
     .btn.primary {
-      background: var(--blue);
-      color: white;
-      border-color: var(--blue);
+      background: var(--ink);
+      color: var(--paper-2);
+      border-color: var(--ink);
     }
 
-    .profile-card {
-      background: white;
+    .btn.green {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .hero-card {
+      background: rgba(255, 253, 248, 0.82);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 24px;
       box-shadow: var(--shadow);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
     }
 
-    .profile-head {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--terracotta-soft);
+      right: -70px;
+      top: -70px;
     }
 
-    .avatar {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: var(--dark);
-      color: white;
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--forest-soft);
+      right: 42px;
+      top: 78px;
+    }
+
+    .hero-card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mono {
+      font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
-      font-size: 20px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
     }
 
-    .profile-head h2 {
-      margin: 0;
-      font-size: 21px;
-      line-height: 1.2;
+    .profile-name {
+      margin: 12px 0 6px;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
     }
 
-    .profile-head p {
-      margin: 3px 0 0;
+    .profile-role {
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--muted);
-      font-size: 14px;
+      margin: 0 0 22px;
     }
 
-    .profile-list {
+    .focus-list {
       display: grid;
-      gap: 10px;
-      color: #334155;
-      font-size: 14px;
+      gap: 12px;
+      margin-top: 22px;
     }
 
-    .profile-item {
-      padding: 10px 12px;
-      background: var(--soft);
-      border-radius: 12px;
+    .focus-item {
+      background: rgba(247, 239, 227, 0.74);
+      border: 1px solid rgba(229, 216, 197, 0.9);
+      border-radius: 18px;
+      padding: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+    }
+
+    .focus-item span {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 900;
+      color: var(--forest);
+      margin-bottom: 2px;
+    }
+
+    .quick-strip {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .strip-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(53, 39, 24, 0.07);
+    }
+
+    .strip-item strong {
+      display: block;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .strip-item span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
     }
 
     section {
-      padding: 46px 0;
+      padding: 54px 0;
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 28px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
       align-items: end;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
     .kicker {
-      color: var(--blue);
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
+      color: var(--terracotta);
       margin-bottom: 8px;
     }
 
-    h3 {
+    h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
-      max-width: 700px;
+      line-height: 1.75;
     }
 
     .grid {
@@ -303,193 +395,256 @@
     }
 
     .card {
-      background: white;
+      background: rgba(255, 253, 248, 0.86);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.045);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(53, 39, 24, 0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      animation: rise 0.55s ease both;
     }
 
     .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow);
+      border-color: rgba(200, 111, 71, 0.42);
     }
 
-    .card h4 {
-      margin: 0 0 8px;
-      font-size: 19px;
-      letter-spacing: -0.02em;
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
     }
 
     .card p {
       margin: 0;
-      color: #4b5a6c;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    .card-number {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--forest);
+      margin-bottom: 18px;
     }
 
     .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 14px;
+      gap: 8px;
+      margin-top: 16px;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .chip {
       display: inline-flex;
-      align-items: center;
       border-radius: 999px;
-      padding: 6px 9px;
-      background: var(--soft);
-      color: #334155;
+      padding: 6px 10px;
+      background: var(--forest-soft);
+      color: var(--forest);
+      border: 1px solid #d4e5dc;
       font-size: 12px;
-      font-weight: 800;
-      border: 1px solid #e6ebf2;
+      font-weight: 900;
     }
 
-    .chip.blue {
-      background: var(--blue-soft);
-      color: var(--blue);
-      border-color: #dbe6ff;
+    .chip.warm {
+      background: var(--terracotta-soft);
+      color: #9b4f31;
+      border-color: #edcdbd;
     }
 
     .timeline {
       display: grid;
-      gap: 14px;
+      gap: 16px;
     }
 
     .job {
       display: grid;
       grid-template-columns: 190px 1fr;
-      gap: 24px;
-      background: white;
+      gap: 28px;
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.045);
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(53, 39, 24, 0.07);
     }
 
     .job-time {
-      color: var(--blue);
-      font-weight: 900;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--terracotta);
       font-size: 14px;
+      font-weight: 900;
     }
 
-    .job h4 {
+    .job h3 {
       margin: 0 0 4px;
-      font-size: 20px;
-      letter-spacing: -0.02em;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
     }
 
     .company {
-      color: var(--muted);
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--forest);
+      font-weight: 900;
+      margin-bottom: 12px;
     }
 
     .job ul {
       margin: 0;
       padding-left: 18px;
-      color: #4b5a6c;
-    }
-
-    .job li {
-      margin-bottom: 6px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
 
     .project-card {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      min-height: 100%;
     }
 
-    .project-top {
+    .project-card .project-meta {
+      font-family: Arial, Helvetica, sans-serif;
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 4px;
+      gap: 8px;
     }
 
     .project-note {
-      margin-top: 8px;
-      padding: 12px;
-      background: var(--soft);
-      border-radius: 12px;
-      border: 1px solid #e6ebf2;
-      color: #4b5a6c;
-      font-size: 14px;
+      background: rgba(247, 239, 227, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: auto;
     }
 
     .project-note strong {
-      color: var(--text);
+      color: var(--ink);
     }
 
-    .skill-group h4 {
+    .skills-board {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card h3 {
       margin-bottom: 12px;
     }
 
-    .education-meta {
-      color: var(--muted);
-      font-weight: 800;
+    .education-card .meta {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--forest);
+      font-weight: 900;
       margin-bottom: 8px;
     }
 
-    .contact-section {
-      padding-bottom: 60px;
+    .education-card p + p {
+      margin-top: 10px;
     }
 
     .contact-card {
+      background: var(--ink);
+      color: var(--paper-2);
+      border-radius: 34px;
+      padding: 36px;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 22px;
+      gap: 28px;
       align-items: center;
-      background: var(--dark);
-      color: white;
-      border-radius: 24px;
-      padding: 30px;
       box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
 
-    .contact-card h3 {
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(200, 111, 71, 0.28);
+      right: -90px;
+      top: -120px;
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card h2 {
       color: white;
     }
 
     .contact-card p {
-      margin: 12px 0 0;
-      color: #d1d5db;
-      max-width: 760px;
+      margin: 14px 0 0;
+      max-width: 720px;
+      color: #d8dee8;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .contact-actions {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
       gap: 10px;
+      justify-content: flex-end;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .contact-actions .btn {
-      background: white;
-      color: var(--text);
-      border-color: white;
+      background: var(--paper-2);
+      color: var(--ink);
+      border-color: var(--paper-2);
     }
 
     footer {
+      padding: 0 0 36px;
       text-align: center;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
-      padding: 0 0 34px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 { animation-delay: 0.04s; }
+    .delay-2 { animation-delay: 0.08s; }
+    .delay-3 { animation-delay: 0.12s; }
+    .delay-4 { animation-delay: 0.16s; }
+    .delay-5 { animation-delay: 0.20s; }
+    .delay-6 { animation-delay: 0.24s; }
+
+    @media (max-width: 980px) {
+      .hero-layout,
       .section-head,
       .job,
       .contact-card {
         grid-template-columns: 1fr;
       }
 
+      .quick-strip,
       .grid.three,
-      .grid.two {
-        grid-template-columns: 1fr;
+      .grid.two,
+      .skills-board {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .contact-actions {
@@ -499,7 +654,7 @@
 
     @media (max-width: 680px) {
       .container {
-        width: min(100% - 28px, 1120px);
+        width: min(100% - 28px, 1160px);
       }
 
       .nav {
@@ -510,16 +665,22 @@
       }
 
       .nav-links {
-        gap: 12px;
         flex-wrap: wrap;
+        gap: 12px;
       }
 
       .hero {
-        padding-top: 42px;
+        padding-top: 46px;
       }
 
-      .actions .btn,
-      .contact-actions .btn {
+      .quick-strip,
+      .grid.three,
+      .grid.two,
+      .skills-board {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
         width: 100%;
       }
     }
@@ -541,58 +702,84 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a class="nav-contact" href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Contact</a>
       </div>
     </div>
   </div>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Systems Engineering · MBSE · Requirements Engineering</div>
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-left">
+          <div class="label">Systems Engineering Portfolio</div>
 
-        <h1>Nandish Gowda</h1>
+          <h1>
+            <span class="title-line">Nandish</span>
+            <span class="title-line">Gowda</span>
+            <span class="title-line title-accent">builds structure.</span>
+          </h1>
 
-        <p class="subtitle">
-          I connect requirements, system architecture, and verification for complex technical systems.
-        </p>
+          <p class="intro">
+            I connect <strong>requirements</strong>, <strong>system architecture</strong>, and
+            <strong>verification</strong> for complex technical systems.
+          </p>
 
-        <p class="hero-text">
-          Systems Engineering graduate based in Stuttgart, Germany, with Bosch Home Comfort experience
-          in requirements engineering, SysML-based modelling, product line engineering, and MATLAB/Simulink-based
-          virtual testing for HVAC and heat pump systems.
-        </p>
+          <p class="supporting">
+            Based in Stuttgart, Germany. Experienced in MBSE, SysML-based modelling,
+            requirements engineering, product line engineering, and MATLAB/Simulink-based
+            virtual testing for HVAC and heat pump systems.
+          </p>
 
-        <div class="hero-meta">
-          <span>Stuttgart, Germany</span>
-          <span>Open to full-time roles</span>
-          <span>MBSE · V&V · System Architecture</span>
-        </div>
-
-        <div class="actions">
-          <a class="btn primary" href="mailto:nandish0721@gmail.com">Email Me</a>
-          <a class="btn" href="assets/Resume_Nandish_SB.pdf" target="_blank">Download English CV</a>
-          <a class="btn" href="assets/Lebenslauf_Nandish_SB_N.pdf" target="_blank">Download German CV</a>
-          <a class="btn" href="https://www.linkedin.com/in/nandish-gowda-a-s" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-
-      <aside class="profile-card">
-        <div class="profile-head">
-          <div class="avatar">NG</div>
-          <div>
-            <h2>Systems Engineer</h2>
-            <p>MBSE | SysML | Requirements | V&V</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:nandish0721@gmail.com">Email Me</a>
+            <a class="btn green" href="assets/Resume_Nandish_SB.pdf" target="_blank">English CV</a>
+            <a class="btn" href="assets/Lebenslauf_Nandish_SB_N.pdf" target="_blank">German CV</a>
+            <a class="btn" href="https://www.linkedin.com/in/nandish-gowda-a-s" target="_blank">LinkedIn</a>
           </div>
         </div>
 
-        <div class="profile-list">
-          <div class="profile-item">Practical Bosch Home Comfort experience in engineering workflows.</div>
-          <div class="profile-item">Tools: Cameo, IBM DOORS, Jira R4J, Polarion, MATLAB/Simulink.</div>
-          <div class="profile-item">Focus: traceability, system decomposition, and verification linkage.</div>
-          <div class="profile-item">Languages: English, German, Hindi, Kannada.</div>
+        <aside class="hero-card">
+          <div class="hero-card-content">
+            <div class="mono">Current focus</div>
+            <h2 class="profile-name">Systems Engineer</h2>
+            <p class="profile-role">MBSE · SysML · Requirements Engineering · V&V</p>
+
+            <div class="focus-list">
+              <div class="focus-item">
+                <span>Tools</span>
+                Cameo, IBM DOORS, Jira R4J, Polarion, MATLAB/Simulink
+              </div>
+              <div class="focus-item">
+                <span>Engineering work</span>
+                Traceability, system decomposition, model views, verification linkage
+              </div>
+              <div class="focus-item">
+                <span>Target roles</span>
+                Systems Engineering, Requirements Engineering, MBSE, V&V
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="quick-strip">
+        <div class="strip-item">
+          <strong>Requirements</strong>
+          <span>Analysis, structuring, reviews, traceability</span>
         </div>
-      </aside>
+        <div class="strip-item">
+          <strong>MBSE / SysML</strong>
+          <span>System models, architecture, decomposition</span>
+        </div>
+        <div class="strip-item">
+          <strong>Virtual testing</strong>
+          <span>MATLAB/Simulink-based validation support</span>
+        </div>
+        <div class="strip-item">
+          <strong>Product lines</strong>
+          <span>Feature modelling and variability management</span>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -603,72 +790,77 @@
         <div class="section-head">
           <div>
             <div class="kicker">Expertise</div>
-            <h3>Engineering areas</h3>
+            <h2>Engineering areas</h2>
           </div>
           <p>
-            My profile is centred on structured engineering work: requirements, architecture, modelling,
-            traceability, and verification support.
+            My work focuses on making engineering information clearer, connected, and easier to validate.
           </p>
         </div>
 
         <div class="grid three">
-          <article class="card">
-            <h4>Requirements Engineering</h4>
+          <article class="card delay-1">
+            <div class="card-number">01</div>
+            <h3>Requirements Engineering</h3>
             <p>Requirement definition, analysis, structuring, review, lifecycle management, and traceability.</p>
             <div class="chips">
-              <span class="chip blue">Jira R4J</span>
-              <span class="chip blue">DOORS</span>
-              <span class="chip">Polarion</span>
+              <span class="chip">Jira R4J</span>
+              <span class="chip">DOORS</span>
+              <span class="chip warm">Polarion</span>
             </div>
           </article>
 
-          <article class="card">
-            <h4>MBSE and System Architecture</h4>
+          <article class="card delay-2">
+            <div class="card-number">02</div>
+            <h3>MBSE and Architecture</h3>
             <p>SysML-based modelling, system decomposition, architecture views, and interface understanding.</p>
             <div class="chips">
-              <span class="chip blue">SysML</span>
-              <span class="chip blue">Cameo</span>
-              <span class="chip">Enterprise Architect</span>
+              <span class="chip">SysML</span>
+              <span class="chip">Cameo</span>
+              <span class="chip warm">Enterprise Architect</span>
             </div>
           </article>
 
-          <article class="card">
-            <h4>Verification and Validation</h4>
-            <p>Linking requirements with verification artefacts and supporting virtual validation workflows.</p>
+          <article class="card delay-3">
+            <div class="card-number">03</div>
+            <h3>Verification and Validation</h3>
+            <p>Connecting requirements with verification artefacts and virtual validation activities.</p>
             <div class="chips">
-              <span class="chip blue">V-Model</span>
-              <span class="chip blue">MATLAB</span>
-              <span class="chip">Simulink</span>
+              <span class="chip">V-Model</span>
+              <span class="chip">MATLAB</span>
+              <span class="chip warm">Simulink</span>
             </div>
           </article>
 
-          <article class="card">
-            <h4>Product Line Engineering</h4>
-            <p>Feature modelling, variability management, modularisation, and variant-oriented system thinking.</p>
+          <article class="card delay-4">
+            <div class="card-number">04</div>
+            <h3>Product Line Engineering</h3>
+            <p>Feature modelling, variability management, modularisation, and variant-oriented thinking.</p>
             <div class="chips">
-              <span class="chip blue">MBPLE</span>
+              <span class="chip">MBPLE</span>
               <span class="chip">Pure::Variants</span>
-              <span class="chip">Feature Models</span>
+              <span class="chip warm">Feature Models</span>
             </div>
           </article>
 
-          <article class="card">
-            <h4>Interfaces and Decomposition</h4>
-            <p>Breaking systems into manageable levels and supporting communication between engineering disciplines.</p>
+          <article class="card delay-5">
+            <div class="card-number">05</div>
+            <h3>Interfaces and Decomposition</h3>
+            <p>Breaking systems into manageable levels and clarifying communication between disciplines.</p>
             <div class="chips">
               <span class="chip">Architecture</span>
               <span class="chip">Interfaces</span>
-              <span class="chip">System Views</span>
+              <span class="chip warm">System Views</span>
             </div>
           </article>
 
-          <article class="card">
-            <h4>Technical Documentation</h4>
-            <p>Clear engineering documentation, requirement structures, model views, and stakeholder-specific artefacts.</p>
+          <article class="card delay-6">
+            <div class="card-number">06</div>
+            <h3>Technical Documentation</h3>
+            <p>Clear engineering documentation, requirement structures, model views, and stakeholder artefacts.</p>
             <div class="chips">
               <span class="chip">Reviews</span>
               <span class="chip">Documentation</span>
-              <span class="chip">Quality</span>
+              <span class="chip warm">Quality</span>
             </div>
           </article>
         </div>
@@ -680,20 +872,19 @@
         <div class="section-head">
           <div>
             <div class="kicker">Experience</div>
-            <h3>Selected experience</h3>
+            <h2>Selected experience</h2>
           </div>
           <p>
-            Practical work across requirements engineering, MBSE, product line engineering, virtual testing,
-            and production engineering.
+            Practical engineering work across requirements, MBSE, product line engineering,
+            virtual testing, and production engineering.
           </p>
         </div>
 
         <div class="timeline">
-
           <article class="job">
             <div class="job-time">03.2025 to 08.2025</div>
             <div>
-              <h4>Systems & Requirements Engineering in Virtual Testing</h4>
+              <h3>Systems & Requirements Engineering in Virtual Testing</h3>
               <div class="company">Bosch Home Comfort, Wernau</div>
               <ul>
                 <li>Developed SysML-based system models to support system decomposition and architecture understanding.</li>
@@ -707,7 +898,7 @@
           <article class="job">
             <div class="job-time">07.2024 to 12.2024</div>
             <div>
-              <h4>Master Thesis: Model-Based Product Line Engineering</h4>
+              <h3>Master Thesis: Model-Based Product Line Engineering</h3>
               <div class="company">Bosch Home Comfort, Wernau</div>
               <ul>
                 <li>Developed an MBSE-based product line engineering approach for configurable heat pump systems.</li>
@@ -721,7 +912,7 @@
           <article class="job">
             <div class="job-time">12.2023 to 06.2024</div>
             <div>
-              <h4>Requirements Engineering Internship</h4>
+              <h3>Requirements Engineering Internship</h3>
               <div class="company">Bosch Home Comfort, Wernau</div>
               <ul>
                 <li>Developed a pilot requirements project for HVAC development activities.</li>
@@ -735,7 +926,7 @@
           <article class="job">
             <div class="job-time">04.2019 to 08.2021</div>
             <div>
-              <h4>Production Engineer</h4>
+              <h3>Production Engineer</h3>
               <div class="company">Saft India, Bengaluru</div>
               <ul>
                 <li>Supported research and development activities for Ni-Cd and Li-ion battery packs.</li>
@@ -743,7 +934,6 @@
               </ul>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -753,7 +943,7 @@
         <div class="section-head">
           <div>
             <div class="kicker">Projects</div>
-            <h3>Selected project work</h3>
+            <h2>Selected project work</h2>
           </div>
           <p>
             Public-safe summaries of selected engineering projects. No confidential company data,
@@ -762,70 +952,73 @@
         </div>
 
         <div class="grid two">
-
           <article class="card project-card">
-            <div class="project-top">
-              <span class="chip blue">Thesis</span>
-              <span class="chip">MBSE</span>
+            <div class="project-meta">
+              <span class="chip">Thesis</span>
+              <span class="chip warm">MBSE</span>
               <span class="chip">Product Line Engineering</span>
             </div>
-            <h4>MBPLE for configurable heat pump systems</h4>
+            <h3>MBPLE for configurable heat pump systems</h3>
             <p>
-              Developed a model-based product line engineering approach to manage feature variability and support
-              reuse-oriented engineering for configurable technical systems.
+              Developed a model-based product line engineering approach to manage feature variability
+              and support reuse-oriented engineering for configurable technical systems.
             </p>
             <div class="project-note">
-              <strong>Contribution:</strong> Combined MBSE, feature modelling, variant modelling, and PPR thinking using SysML, Cameo, and Pure::Variants.
+              <strong>Contribution:</strong> Combined MBSE, feature modelling, variant modelling,
+              and PPR thinking using SysML, Cameo, and Pure::Variants.
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-top">
-              <span class="chip blue">Requirements</span>
-              <span class="chip">Jira R4J</span>
+            <div class="project-meta">
+              <span class="chip">Requirements</span>
+              <span class="chip warm">Jira R4J</span>
               <span class="chip">Traceability</span>
             </div>
-            <h4>Requirements Engineering Dry Run</h4>
+            <h3>Requirements Engineering Dry Run</h3>
             <p>
-              Supported a pilot requirements engineering process for HVAC development using structured requirement
-              levels, review workflows, and traceability links.
+              Supported a pilot requirements engineering process for HVAC development using structured
+              requirement levels, review workflows, and traceability links.
             </p>
             <div class="project-note">
-              <strong>Contribution:</strong> Improved requirement visibility through structured requirement levels, active links, reviews, and traceability matrices.
+              <strong>Contribution:</strong> Improved requirement visibility through structured levels,
+              active links, reviews, and traceability matrices.
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-top">
-              <span class="chip blue">Virtual Testing</span>
-              <span class="chip">MATLAB</span>
+            <div class="project-meta">
+              <span class="chip">Virtual Testing</span>
+              <span class="chip warm">MATLAB</span>
               <span class="chip">Simulink</span>
             </div>
-            <h4>Virtual validation support</h4>
+            <h3>Virtual validation support</h3>
             <p>
-              Supported virtual validation by linking requirements to verification artefacts and simulation-based test activities.
+              Supported virtual validation by linking requirements to verification artefacts and
+              simulation-based test activities.
             </p>
             <div class="project-note">
-              <strong>Contribution:</strong> Connected requirements, system models, and virtual test cases within a V-Model-based workflow.
+              <strong>Contribution:</strong> Connected requirements, system models, and virtual test
+              cases within a V-Model-based workflow.
             </div>
           </article>
 
           <article class="card project-card">
-            <div class="project-top">
-              <span class="chip blue">Academic</span>
-              <span class="chip">Systems Engineering</span>
+            <div class="project-meta">
+              <span class="chip">Academic</span>
+              <span class="chip warm">Systems Engineering</span>
               <span class="chip">V-Model</span>
             </div>
-            <h4>Zero-G RC Aircraft project</h4>
+            <h3>Zero-G RC Aircraft project</h3>
             <p>
-              Applied systems engineering thinking to a student aircraft project through system definition,
-              integration, verification, and validation.
+              Applied systems engineering thinking to a student aircraft project through system
+              definition, integration, verification, and validation.
             </p>
             <div class="project-note">
-              <strong>Contribution:</strong> Applied V-Model principles from requirement definition to system integration and validation.
+              <strong>Contribution:</strong> Applied V-Model principles from requirement definition
+              to system integration and validation.
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -835,61 +1028,56 @@
         <div class="section-head">
           <div>
             <div class="kicker">Skills</div>
-            <h3>Technical toolbox</h3>
+            <h2>Technical toolbox</h2>
           </div>
           <p>
             Tools and methods grouped by engineering purpose.
           </p>
         </div>
 
-        <div class="grid two">
-          <article class="card skill-group">
-            <h4>Requirements Management</h4>
+        <div class="skills-board">
+          <article class="card skill-card">
+            <h3>Requirements Management</h3>
             <div class="chips">
-              <span class="chip blue">IBM DOORS</span>
-              <span class="chip blue">Jira R4J</span>
+              <span class="chip">IBM DOORS</span>
+              <span class="chip">Jira R4J</span>
               <span class="chip">Polarion</span>
-              <span class="chip">Requirement Reviews</span>
-              <span class="chip">Traceability Matrices</span>
-              <span class="chip">Lifecycle Management</span>
+              <span class="chip warm">Requirement Reviews</span>
+              <span class="chip warm">Traceability Matrices</span>
             </div>
           </article>
 
-          <article class="card skill-group">
-            <h4>MBSE and Architecture</h4>
+          <article class="card skill-card">
+            <h3>MBSE and Architecture</h3>
             <div class="chips">
-              <span class="chip blue">SysML</span>
-              <span class="chip blue">UML</span>
+              <span class="chip">SysML</span>
+              <span class="chip">UML</span>
               <span class="chip">Cameo Systems Modeler</span>
-              <span class="chip">Enterprise Architect</span>
-              <span class="chip">System Architecture</span>
-              <span class="chip">System Decomposition</span>
+              <span class="chip warm">Enterprise Architect</span>
+              <span class="chip warm">System Decomposition</span>
             </div>
           </article>
 
-          <article class="card skill-group">
-            <h4>Simulation and Validation</h4>
+          <article class="card skill-card">
+            <h3>Simulation and Validation</h3>
             <div class="chips">
-              <span class="chip blue">MATLAB</span>
-              <span class="chip blue">Simulink</span>
+              <span class="chip">MATLAB</span>
+              <span class="chip">Simulink</span>
               <span class="chip">Virtual Testing</span>
-              <span class="chip">V-Model</span>
-              <span class="chip">Verification</span>
-              <span class="chip">Validation</span>
+              <span class="chip warm">V-Model</span>
+              <span class="chip warm">Verification</span>
             </div>
           </article>
 
-          <article class="card skill-group">
-            <h4>Engineering and Data Tools</h4>
+          <article class="card skill-card">
+            <h3>Engineering and Data Tools</h3>
             <div class="chips">
-              <span class="chip blue">Python</span>
+              <span class="chip">Python</span>
               <span class="chip">C</span>
               <span class="chip">Power BI</span>
-              <span class="chip">Pure::Variants</span>
-              <span class="chip">CATIA</span>
-              <span class="chip">Hypermesh</span>
-              <span class="chip">Ansys</span>
-              <span class="chip">LSTM-based ML</span>
+              <span class="chip warm">Pure::Variants</span>
+              <span class="chip warm">CATIA</span>
+              <span class="chip warm">Ansys</span>
             </div>
           </article>
         </div>
@@ -901,7 +1089,7 @@
         <div class="section-head">
           <div>
             <div class="kicker">Education</div>
-            <h3>Academic background</h3>
+            <h2>Academic background</h2>
           </div>
           <p>
             Systems Engineering and Mechanical Engineering foundation, supported by industrial project experience.
@@ -909,28 +1097,18 @@
         </div>
 
         <div class="grid two">
-          <article class="card">
-            <h4>M.Sc. Systems Engineering for Manufacturing</h4>
-            <div class="education-meta">Otto von Guericke University Magdeburg | 10.2021 to 09.2025</div>
+          <article class="card education-card">
+            <h3>M.Sc. Systems Engineering for Manufacturing</h3>
+            <div class="meta">Otto von Guericke University Magdeburg · 10.2021 to 09.2025</div>
             <p>Grade: 1.65</p>
             <p>Thesis: Feature Modelling and Variability Management in Production Systems Engineering.</p>
-            <div class="chips">
-              <span class="chip blue">Systems Engineering</span>
-              <span class="chip">MBPLE</span>
-              <span class="chip">MBSE</span>
-            </div>
           </article>
 
-          <article class="card">
-            <h4>B.E. Mechanical Engineering</h4>
-            <div class="education-meta">Visvesvaraya Technological University, Bengaluru | 08.2013 to 07.2017</div>
+          <article class="card education-card">
+            <h3>B.E. Mechanical Engineering</h3>
+            <div class="meta">Visvesvaraya Technological University, Bengaluru · 08.2013 to 07.2017</div>
             <p>Grade: 2.1</p>
             <p>Thesis: Design Optimisation of a Centre Fuselage Jig for Ammunition Box Installation.</p>
-            <div class="chips">
-              <span class="chip blue">Mechanical Engineering</span>
-              <span class="chip">Design</span>
-              <span class="chip">Manufacturing</span>
-            </div>
           </article>
         </div>
       </div>
@@ -941,38 +1119,38 @@
         <div class="section-head">
           <div>
             <div class="kicker">Certifications and Engagement</div>
-            <h3>Additional profile</h3>
+            <h2>Additional profile</h2>
           </div>
         </div>
 
         <div class="grid three">
           <article class="card">
-            <h4>IREB CPRE</h4>
+            <h3>IREB CPRE</h3>
             <p>Foundation Level certification in Requirements Engineering.</p>
           </article>
 
           <article class="card">
-            <h4>MBSE Methods and SysML Best Practices</h4>
+            <h3>MBSE Methods and SysML Best Practices</h3>
             <p>Coursework focused on model-based systems engineering and SysML practices.</p>
           </article>
 
           <article class="card">
-            <h4>Vice President, Business Development</h4>
+            <h3>Vice President, Business Development</h3>
             <p>Coordinated student initiatives and collaboration with academic and industry stakeholders at DEGIS e.V., Magdeburg.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact">
       <div class="container">
         <div class="contact-card">
           <div>
-            <div class="kicker" style="color:#93c5fd;">Contact</div>
-            <h3>Let’s connect</h3>
+            <div class="kicker">Contact</div>
+            <h2>Let’s connect</h2>
             <p>
-              I am open to full-time roles in Systems Engineering, Requirements Engineering, MBSE,
-              System Architecture, Verification and Validation, and product development.
+              I am open to full-time roles in Systems Engineering, Requirements Engineering,
+              MBSE, System Architecture, Verification and Validation, and product development.
             </p>
           </div>
 
