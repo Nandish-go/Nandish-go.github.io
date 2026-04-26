@@ -1,11 +1,559 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nandish Gowda | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nandish Gowda | Systems Engineer Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --dark: #0f172a;
+      --text: #1f2937;
+      --muted: #64748b;
+      --card: #ffffff;
+      --blue: #2563eb;
+      --light-blue: #e8f0ff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 80px 20px 70px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 46px;
+      margin: 0 0 10px;
+      letter-spacing: -0.5px;
+    }
+
+    header h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0 0 22px;
+      color: #dbeafe;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      font-size: 17px;
+      color: #e2e8f0;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--blue);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: white;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .nav-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 45px 20px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    h3 {
+      font-size: 30px;
+      margin: 0 0 18px;
+      color: var(--dark);
+      letter-spacing: -0.3px;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #111827;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .highlight-card {
+      border-left: 5px solid var(--blue);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--light-blue);
+      color: #1d4ed8;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin: 4px 4px 4px 0;
+      font-weight: 700;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .timeline-item {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border-left: 5px solid var(--blue);
+    }
+
+    .timeline-item .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+
+    .contact-box a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--dark);
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 800px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      header h2 {
+        font-size: 18px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Nandish Gowda</h1>
-  <h2>Systems Engineer | MBSE | Requirements Engineering</h2>
-  <p>This is my first GitHub Pages website test.</p>
+
+  <header>
+    <h1>Nandish Gowda</h1>
+    <h2>Systems Engineer | MBSE | Requirements Engineering</h2>
+    <p>
+      I connect requirements, system architecture, traceability, and verification for complex technical systems.
+      My experience covers MBSE, SysML-based modelling, V-Model workflows, requirements management,
+      and virtual validation using MATLAB/Simulink in industrial engineering environments.
+    </p>
+
+    <a class="button" href="mailto:nandish0721@gmail.com">Contact Me</a>
+    <a class="button secondary" href="https://www.linkedin.com/in/nandish-gowda-a-s" target="_blank">LinkedIn</a>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#focus">Focus Areas</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="about">
+      <h3>About Me</h3>
+      <div class="two-column">
+        <div class="card highlight-card">
+          <p>
+            I am a Systems Engineering graduate based in Stuttgart, Germany, with practical experience in
+            Systems Engineering, Requirements Engineering, Model-Based Systems Engineering, and virtual testing.
+            My work has focused on structuring system and functional requirements, creating SysML-based system
+            models, supporting traceability between requirements and verification artefacts, and contributing to
+            engineering workflows for HVAC and heat pump systems.
+          </p>
+          <p>
+            I am particularly interested in roles related to Requirements Engineering, Systems Engineering,
+            MBSE, System Architecture, Verification and Validation, and Product Development.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Profile Snapshot</h4>
+          <p><strong>Location:</strong> Stuttgart, Germany</p>
+          <p><strong>Degree:</strong> M.Sc. Systems Engineering for Manufacturing</p>
+          <p><strong>Domains:</strong> HVAC, heat pump systems, complex technical systems</p>
+          <p><strong>Availability:</strong> Immediate</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <h3>Core Focus Areas</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Requirements Engineering</h4>
+          <p>
+            Requirements definition, analysis, structuring, review, consistency checking,
+            lifecycle management, and traceability using Jira R4J, IBM DOORS, and Polarion.
+          </p>
+          <span class="tag">Jira R4J</span>
+          <span class="tag">DOORS</span>
+          <span class="tag">Traceability</span>
+        </div>
+
+        <div class="card">
+          <h4>Model-Based Systems Engineering</h4>
+          <p>
+            SysML-based modelling, system decomposition, architecture structuring, interface modelling,
+            and stakeholder-oriented system views using Cameo Systems Modeler and Enterprise Architect.
+          </p>
+          <span class="tag">MBSE</span>
+          <span class="tag">SysML</span>
+          <span class="tag">Cameo</span>
+        </div>
+
+        <div class="card">
+          <h4>Verification and Validation</h4>
+          <p>
+            Linking requirements to verification artefacts and supporting virtual validation activities
+            using MATLAB/Simulink within V-Model-based engineering workflows.
+          </p>
+          <span class="tag">V-Model</span>
+          <span class="tag">V&V</span>
+          <span class="tag">MATLAB/Simulink</span>
+        </div>
+
+        <div class="card">
+          <h4>Product Line Engineering</h4>
+          <p>
+            Feature modelling, variability management, modularization, system variants, and MBPLE concepts
+            for configurable heat pump product and production systems.
+          </p>
+          <span class="tag">MBPLE</span>
+          <span class="tag">Pure::Variants</span>
+          <span class="tag">Product Variability</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h3>Professional Experience</h3>
+
+      <div class="timeline-item">
+        <h4>Systems & Requirements Engineering in Virtual Testing</h4>
+        <div class="meta">Bosch Home Comfort, Wernau | 03.2025 to 08.2025</div>
+        <ul>
+          <li>Developed SysML-based system models to support system decomposition and architecture understanding.</li>
+          <li>Integrated requirements, system models, and verification artefacts within structured V-Model and MBSE workflows.</li>
+          <li>Supported system-level validation and virtual testing activities using MATLAB/Simulink.</li>
+          <li>Collaborated with multidisciplinary engineering teams to maintain traceability between requirements, models, and verification activities.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h4>Master Thesis: Model-Based Product Line Engineering</h4>
+        <div class="meta">Bosch Home Comfort, Wernau | 07.2024 to 12.2024</div>
+        <ul>
+          <li>Developed an MBSE-based product line engineering approach for configurable heat pump systems.</li>
+          <li>Modelled system variability, feature structures, and modularization concepts at system level.</li>
+          <li>Integrated requirements into system-level models and traceability workflows.</li>
+          <li>Achieved Master’s Thesis grade: 1.1.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h4>Requirements Engineering Internship</h4>
+        <div class="meta">Bosch Home Comfort, Wernau | 12.2023 to 06.2024</div>
+        <ul>
+          <li>Developed a pilot requirements project and supported system requirements documentation for HVAC development projects.</li>
+          <li>Maintained requirements libraries, reviews, and traceability structures in Jira and Jira R4J.</li>
+          <li>Supported change and configuration management through requirement reviews and consistency checks.</li>
+          <li>Managed traceability using requirement matrices and active linking between engineering artefacts.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <h4>Production Engineer</h4>
+        <div class="meta">Saft India, Bengaluru | 04.2019 to 08.2021</div>
+        <ul>
+          <li>Supported research and development activities for Ni-Cd and Li-ion battery packs.</li>
+          <li>Contributed to manufacturing and development tasks in an industrial production environment.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h3>Selected Projects</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>MBPLE for Heat Pump Systems</h4>
+          <p>
+            Developed a methodology combining MBSE, Product Line Engineering, feature modelling,
+            variant modelling, and Product-Process-Resource thinking for configurable heat pump systems.
+          </p>
+          <span class="tag">MBSE</span>
+          <span class="tag">SysML</span>
+          <span class="tag">Pure::Variants</span>
+          <span class="tag">Cameo</span>
+        </div>
+
+        <div class="card">
+          <h4>Requirements Engineering Dry Run</h4>
+          <p>
+            Supported a pilot requirements engineering process using system-level requirement structures,
+            traceability links, review workflows, and dashboard-based status tracking.
+          </p>
+          <span class="tag">Jira R4J</span>
+          <span class="tag">Traceability</span>
+          <span class="tag">V-Model</span>
+        </div>
+
+        <div class="card">
+          <h4>Virtual Testing Support</h4>
+          <p>
+            Supported virtual validation activities by connecting requirements with verification and
+            virtual test artefacts in MATLAB/Simulink-based engineering workflows.
+          </p>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Simulink</span>
+          <span class="tag">V&V</span>
+        </div>
+
+        <div class="card">
+          <h4>Zero-G RC Aircraft Project</h4>
+          <p>
+            Applied the V-Model for system definition, modelling, system integration,
+            verification, validation, and structured engineering documentation.
+          </p>
+          <span class="tag">Systems Engineering</span>
+          <span class="tag">V-Model</span>
+        </div>
+
+        <div class="card">
+          <h4>Virtual Commissioning with RealVirtual.io</h4>
+          <p>
+            Supported academic digital engineering projects through system documentation,
+            MBSE structuring, and virtual commissioning concepts in collaboration with university supervisors.
+          </p>
+          <span class="tag">RealVirtual.IO</span>
+          <span class="tag">Digital Engineering</span>
+          <span class="tag">MBSE</span>
+        </div>
+
+        <div class="card">
+          <h4>Battery Pack Development Support</h4>
+          <p>
+            Supported development and manufacturing tasks for Ni-Cd and Li-ion battery packs
+            in an industrial production engineering environment.
+          </p>
+          <span class="tag">Battery Systems</span>
+          <span class="tag">Production Engineering</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h3>Technical Skills</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Requirements Management</h4>
+          <span class="tag">IBM DOORS</span>
+          <span class="tag">Jira R4J</span>
+          <span class="tag">Polarion</span>
+          <span class="tag">Requirement Reviews</span>
+          <span class="tag">Traceability</span>
+        </div>
+
+        <div class="card">
+          <h4>Modelling and Simulation</h4>
+          <span class="tag">SysML</span>
+          <span class="tag">UML</span>
+          <span class="tag">Cameo Systems Modeler</span>
+          <span class="tag">Enterprise Architect</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Simulink</span>
+          <span class="tag">RealVirtual.IO</span>
+        </div>
+
+        <div class="card">
+          <h4>Programming and Data</h4>
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+          <span class="tag">LSTM-based Machine Learning</span>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <div class="card">
+          <h4>Engineering Tools</h4>
+          <span class="tag">Pure::Variants</span>
+          <span class="tag">CATIA</span>
+          <span class="tag">Hypermesh</span>
+          <span class="tag">Ansys</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h3>Education</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>M.Sc. Systems Engineering for Manufacturing</h4>
+          <p>
+            Otto von Guericke University Magdeburg<br>
+            10.2021 to 09.2025<br>
+            Grade: 1.65
+          </p>
+          <p>
+            Thesis: Feature Modelling and Variability Management in Production Systems Engineering.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>B.E. Mechanical Engineering</h4>
+          <p>
+            Visvesvaraya Technological University, Bengaluru<br>
+            08.2013 to 07.2017<br>
+            Grade: 2.1
+          </p>
+          <p>
+            Thesis: Design Optimisation of a Centre Fuselage Jig for Ammunition Box Installation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h3>Certifications, Publications and Engagement</h3>
+      <div class="card">
+        <ul>
+          <li>IREB CPRE, Foundation Level in Requirements Engineering</li>
+          <li>MBSE Methods and SysML Best Practices, Coursera</li>
+          <li>Publication: Frugal Engineering and the Impact of Frugal Engineering on Complex Engineering Practices</li>
+          <li>Vice President, Business Development, DEGIS e.V., Magdeburg</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="languages">
+      <h3>Languages</h3>
+      <div class="card">
+        <span class="tag">English: Fluent C1/C2</span>
+        <span class="tag">German: Intermediate B1/B2</span>
+        <span class="tag">Hindi: Intermediate B2</span>
+        <span class="tag">Kannada: Native C2</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <div class="card contact-box">
+        <p>
+          <strong>Location:</strong> Stuttgart, Germany<br>
+          <strong>Email:</strong> <a href="mailto:nandish0721@gmail.com">nandish0721@gmail.com</a><br>
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nandish-gowda-a-s" target="_blank">linkedin.com/in/nandish-gowda-a-s</a>
+        </p>
+        <p>
+          CV download buttons can be added after we upload your English and German CV files into an assets folder.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Nandish Gowda. Personal portfolio website.</p>
+  </footer>
+
 </body>
 </html>
