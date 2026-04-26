@@ -579,7 +579,185 @@
       font-size: 14px;
       font-weight: 700;
     }
+    
+     .systems-flow {
+      position: absolute;
+      right: 4.5%;
+      top: 39%;
+      width: min(430px, 34vw);
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid rgba(216, 203, 187, 0.88);
+      border-radius: 18px;
+      background: rgba(251, 247, 239, 0.58);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
 
+    .flow-title {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .flow-track {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .flow-track::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 22px;
+      height: 1px;
+      background: var(--line);
+      z-index: 0;
+    }
+
+    .flow-node {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .flow-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--paper-light);
+      display: grid;
+      place-items: center;
+      font-family: var(--sans);
+      font-weight: 800;
+      color: var(--ink);
+      animation: nodePulse 5.6s ease-in-out infinite;
+    }
+
+    .flow-node:nth-child(2) .flow-dot {
+      animation-delay: 1.4s;
+    }
+
+    .flow-node:nth-child(3) .flow-dot {
+      animation-delay: 2.8s;
+    }
+
+    .flow-node:nth-child(4) .flow-dot {
+      animation-delay: 4.2s;
+    }
+
+    @keyframes nodePulse {
+      0%, 72%, 100% {
+        border-color: var(--line);
+        color: var(--ink);
+        transform: translateY(0);
+      }
+      12%, 24% {
+        border-color: var(--rust);
+        color: var(--rust);
+        transform: translateY(-4px);
+      }
+    }
+
+    .flow-runner {
+      position: absolute;
+      top: 18px;
+      left: 7%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--rust);
+      box-shadow: 0 0 0 8px rgba(196, 87, 47, 0.15);
+      z-index: 2;
+      animation: runnerMove 5.6s ease-in-out infinite;
+    }
+
+    @keyframes runnerMove {
+      0% { left: 7%; }
+      25% { left: 32%; }
+      50% { left: 57%; }
+      75% { left: 82%; }
+      100% { left: 7%; }
+    }
+
+    .flow-loop {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      color: #2d2a26;
+    }
+
+    .flow-loop span {
+      color: var(--rust);
+    }
+
+    .flow-note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .portrait-card {
+      margin-top: 8px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(251, 247, 239, 0.62);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-label {
+      padding: 18px 18px 14px;
+      font-family: var(--serif);
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      font-style: italic;
+    }
+
+    .portrait-label span {
+      color: var(--rust);
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .portrait-caption {
+      padding: 14px 18px 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    
     .cert-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -758,7 +936,18 @@
         width: 140px;
         height: 140px;
       }
+      
+      .systems-flow {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 38px;
+      }
 
+      .portrait-img {
+        height: 320px;
+      }
       .contact-cell {
         border-right: none;
         border-bottom: 1px solid var(--line);
@@ -859,17 +1048,44 @@
             <a class="button ghost" href="assets/CV/Lebenslauf_Nandish_SB_N.pdf" target="_blank">German CV</a>
           </div>
 
-          <div class="rotor-wrap" aria-hidden="true">
-            <svg class="rotor" viewBox="0 0 220 220">
-              <circle cx="110" cy="110" r="84"></circle>
-              <circle class="soft" cx="110" cy="110" r="52"></circle>
-              <circle cx="110" cy="110" r="24"></circle>
-              <line x1="110" y1="20" x2="110" y2="200"></line>
-              <line x1="20" y1="110" x2="200" y2="110"></line>
-              <line x1="46" y1="46" x2="174" y2="174"></line>
-              <line x1="174" y1="46" x2="46" y2="174"></line>
-              <circle class="core" cx="110" cy="110" r="6"></circle>
-            </svg>
+          <div class="systems-flow" aria-label="Systems engineering lifecycle visual">
+            <div class="flow-title">Traceability flow</div>
+
+            <div class="flow-track">
+              <div class="flow-runner"></div>
+
+              <div class="flow-node">
+                <div class="flow-dot">01</div>
+                <div>Need</div>
+              </div>
+
+              <div class="flow-node">
+                <div class="flow-dot">02</div>
+                <div>Model</div>
+              </div>
+
+              <div class="flow-node">
+                <div class="flow-dot">03</div>
+                <div>Verify</div>
+              </div>
+
+              <div class="flow-node">
+                <div class="flow-dot">04</div>
+                <div>Implement</div>
+              </div>
+            </div>
+
+            <div class="flow-loop">
+              <div>Implement</div>
+              <div>→</div>
+              <span>Improve</span>
+              <div>→</div>
+              <div>Need</div>
+            </div>
+
+            <div class="flow-note">
+              A small loop for how I think: capture the need, model the system, verify the logic, implement the solution, and improve it again.
+            </div>
           </div>
 
         </div>
@@ -907,6 +1123,21 @@
               <div class="profile-item">
                 <span>Languages</span>
                 <strong>English · German · Hindi · Kannada</strong>
+              </div>
+                            <div class="portrait-card">
+                <div class="portrait-label">
+                  The person behind the <span>systems.</span>
+                </div>
+
+                <img
+                  class="portrait-img"
+                  src="assets/Pics/Profile%20pic.png"
+                  alt="Portrait of Nandish Gowda"
+                />
+
+                <div class="portrait-caption">
+                  Nandish Gowda · Stuttgart, Germany
+                </div>
               </div>
             </div>
           </div>
