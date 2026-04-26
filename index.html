@@ -2,327 +2,594 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Nandish Gowda · Systems Engineer</title>
-  <meta
-    name="description"
-    content="Portfolio of Nandish Gowda, Systems Engineer focused on MBSE, SysML, requirements engineering, traceability, and verification."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <title>Nandish Gowda · Systems Engineer</title>
+  <meta name="description" content="Portfolio of Nandish Gowda, Systems Engineer focused on MBSE, SysML, Requirements Engineering, traceability, and virtual validation." />
+
+  <!-- Light visible favicon -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+    <rect width="120" height="120" rx="28" fill="%23f4eee4"/>
+    <circle cx="60" cy="60" r="40" fill="none" stroke="%23c4572f" stroke-width="8"/>
+    <text x="60" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800" fill="%23161616">NG</text>
+  </svg>' />
 
   <style>
     :root {
-      --paper: #f3eee4;
+      --paper: #f4eee4;
+      --paper-deep: #e9dfd0;
       --paper-light: #fbf7ef;
-      --paper-card: rgba(251, 247, 239, 0.76);
-      --ink: #171513;
-      --muted: #6d645b;
-      --line: #d9cfbf;
-      --line-strong: #c9bca8;
-      --rust: #cc6232;
-      --forest: #3f7a54;
-      --shadow: 0 12px 34px rgba(43, 33, 22, 0.08);
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Inter", Arial, sans-serif;
-      --mono: "IBM Plex Mono", monospace;
-      --container: min(1320px, calc(100vw - 64px));
+      --ink: #161616;
+      --muted: #6d6a63;
+      --line: #d8cbbb;
+      --rust: #c4572f;
+      --rust-dark: #9f3f22;
+      --green: #2f7a55;
+      --sand: #eee4d5;
+      --shadow: 0 18px 48px rgba(39, 30, 20, 0.09);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --mono: "Courier New", Courier, monospace;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       color: var(--ink);
-      font-family: var(--sans);
       background:
-        linear-gradient(rgba(255,255,255,0.04), rgba(255,255,255,0.04)),
-        repeating-linear-gradient(
-          to right,
-          transparent 0,
-          transparent 127px,
-          rgba(151, 133, 110, 0.11) 127px,
-          rgba(151, 133, 110, 0.11) 128px
-        ),
-        repeating-linear-gradient(
-          to bottom,
-          transparent 0,
-          transparent 127px,
-          rgba(151, 133, 110, 0.11) 127px,
-          rgba(151, 133, 110, 0.11) 128px
-        ),
+        linear-gradient(rgba(40, 32, 22, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(40, 32, 22, 0.028) 1px, transparent 1px),
+        radial-gradient(circle at 8% 0%, rgba(196, 87, 47, 0.10), transparent 28rem),
+        radial-gradient(circle at 92% 4%, rgba(47, 122, 85, 0.08), transparent 30rem),
         var(--paper);
-      line-height: 1.55;
-      overflow-x: hidden;
+      background-size: 76px 76px, 76px 76px, auto, auto, auto;
+      font-family: var(--sans);
+      line-height: 1.65;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    .page {
+      width: min(1420px, calc(100% - 64px));
+      margin: 0 auto;
+      border-left: 1px solid rgba(216, 203, 187, 0.75);
+      border-right: 1px solid rgba(216, 203, 187, 0.75);
+      background: rgba(244, 238, 228, 0.68);
     }
 
     .container {
-      width: var(--container);
+      width: min(1160px, calc(100% - 48px));
       margin: 0 auto;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(243, 238, 228, 0.9);
-      backdrop-filter: blur(10px);
+      z-index: 20;
+      background: rgba(244, 238, 228, 0.90);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 22px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
+      text-decoration: none;
       font-family: var(--mono);
-      font-size: 14px;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      white-space: nowrap;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      color: var(--ink);
     }
 
     .brand-dot {
-      width: 13px;
-      height: 13px;
-      border: 1px solid var(--ink);
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid var(--ink);
       border-radius: 50%;
-      position: relative;
-      display: inline-block;
+      display: inline-grid;
+      place-items: center;
     }
 
     .brand-dot::after {
       content: "";
-      position: absolute;
-      inset: 3px;
-      border-radius: 50%;
+      width: 5px;
+      height: 5px;
       background: var(--rust);
+      border-radius: 50%;
     }
 
     .nav-links {
       display: flex;
+      gap: 24px;
       align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      font-weight: 600;
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .nav-links a:not(.cv-pill) {
+    .nav-links a {
+      text-decoration: none;
+      color: #33302b;
       position: relative;
     }
 
-    .nav-links a:not(.cv-pill)::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -5px;
-      width: 100%;
+      bottom: -6px;
+      width: 0;
       height: 1px;
-      background: var(--ink);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.24s ease;
+      background: var(--rust);
+      transition: width 0.2s ease;
     }
 
-    .nav-links a:not(.cv-pill):hover::after {
-      transform: scaleX(1);
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .cv-pill {
-      border: 1.4px solid var(--ink);
-      padding: 12px 18px;
+      border: 1px solid var(--ink);
       border-radius: 999px;
-      transition: transform 0.2s ease, background 0.2s ease;
+      padding: 9px 16px;
     }
 
-    .cv-pill:hover {
-      background: var(--paper-light);
-      transform: translateY(-1px);
+    .cv-pill::after {
+      display: none;
     }
 
-    section {
-      padding: 42px 0 8px;
-    }
-
-    .section-shell {
-      padding: 36px 0 18px;
-      border-top: 1px solid rgba(134, 116, 91, 0.22);
-    }
-
-    .section-label {
+    .intro-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+      padding: 34px 0 20px;
       font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
       font-size: 13px;
-      margin-bottom: 24px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
     }
 
-    .section-title {
+    .intro-bar div:nth-child(2) {
+      text-align: center;
+    }
+
+    .intro-bar div:nth-child(3) {
+      text-align: right;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 28px 0 82px;
+      min-height: calc(100vh - 72px);
+      border-top: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-title {
       font-family: var(--serif);
-      font-size: clamp(56px, 6vw, 104px);
-      line-height: 0.92;
-      letter-spacing: -0.04em;
-      margin: 0 0 24px;
-      font-weight: 600;
+      font-size: clamp(54px, 8vw, 112px);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      max-width: 940px;
+      margin: 34px 0 0;
+      font-weight: 500;
     }
 
     .accent {
       color: var(--rust);
       font-style: italic;
-    }
-
-    .hero {
-      padding-top: 38px;
-      min-height: calc(100vh - 78px);
-      display: flex;
-      align-items: center;
-    }
-
-    .intro-bar {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      gap: 28px;
-      align-items: center;
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 34px;
-    }
-
-    .status-line {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .status-dot {
-      width: 12px;
-      height: 12px;
-      background: var(--forest);
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(63, 122, 84, 0.12);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.85fr);
-      gap: 38px;
-      align-items: end;
+      letter-spacing: -0.055em;
     }
 
     .hero-copy {
-      position: relative;
-      z-index: 2;
+      max-width: 720px;
+      margin-top: 34px;
+      font-size: clamp(18px, 1.8vw, 23px);
+      color: #4d4a44;
+      line-height: 1.62;
     }
 
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(78px, 10.5vw, 160px);
-      line-height: 0.88;
-      letter-spacing: -0.055em;
-      margin: 0 0 28px;
-      font-weight: 600;
-      max-width: 9.4ch;
-    }
-
-    .hero-lead {
-      font-size: clamp(22px, 2vw, 32px);
-      line-height: 1.42;
-      max-width: 760px;
-      color: #403a34;
-      margin: 0 0 18px;
-    }
-
-    .hero-sub {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 760px;
-      color: #534b43;
-      margin: 0;
+    .hero-copy.small {
+      font-size: 17px;
+      margin-top: 16px;
+      max-width: 740px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 12px;
+      margin-top: 34px;
     }
 
     .button {
-      border: 1px solid var(--ink);
-      border-radius: 999px;
-      padding: 13px 20px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      font-weight: 800;
+      background: transparent;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
 
     .button:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .button.primary {
       background: var(--ink);
-      color: #fff;
-      border-color: var(--ink);
+      color: var(--paper-light);
     }
 
-    .button.ghost {
-      background: transparent;
-      color: var(--ink);
+    .button.primary:hover {
+      background: var(--rust);
+      border-color: var(--rust);
     }
 
     .button.ghost:hover {
       background: var(--paper-light);
     }
 
-    .systems-flow {
+    .rotor-wrap {
+      position: absolute;
+      right: 6%;
+      top: 42%;
+      width: 170px;
+      height: 170px;
+      opacity: 0.66;
+    }
+
+    .rotor {
+      width: 100%;
+      height: 100%;
+      animation: spin 26s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .rotor circle,
+    .rotor line {
+      fill: none;
+      stroke: #8b8277;
+      stroke-width: 1.2;
+    }
+
+    .rotor .core {
+      fill: var(--rust);
+      stroke: none;
+    }
+
+    .rotor .soft {
+      stroke-dasharray: 4 5;
+      opacity: 0.8;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 13px;
+      margin-bottom: 34px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.5vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      font-weight: 500;
+      margin: 0 0 44px;
+      max-width: 980px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+    }
+
+    .lead-text {
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.7;
+      color: #3e3b36;
+      margin: 0;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 24px;
+      border-left: 1px solid var(--line);
+      padding-left: 38px;
+    }
+
+    .profile-item span {
+      display: block;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .profile-item strong {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .work-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .work-item {
+      display: grid;
+      grid-template-columns: 95px 1fr 210px;
+      gap: 26px;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left 0.25s ease, background 0.25s ease;
+    }
+
+    .work-item:hover {
+      padding-left: 12px;
+      background: rgba(255, 250, 242, 0.54);
+    }
+
+    .work-no {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .work-main h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+
+    .work-main p {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: #4c4943;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .work-meta {
+      text-align: right;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 12px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .tag {
+      border: 1px solid #cdbfad;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      background: rgba(255, 250, 242, 0.65);
+      color: #38342f;
+    }
+
+    .timeline {
       position: relative;
-      min-height: 420px;
-      padding: 28px 28px 24px;
+      max-width: 940px;
+      margin-left: 82px;
+      border-left: 1px solid #8f877c;
+      padding-left: 42px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 58px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -51px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+    }
+
+    .timeline-item.active::before {
+      background: var(--rust);
+      border-color: var(--rust);
+      box-shadow: 0 0 0 8px rgba(196, 87, 47, 0.16);
+    }
+
+    .timeline-date {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 38px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .timeline-org {
+      color: var(--rust);
+      font-weight: 800;
+      margin: 8px 0 16px;
+      font-style: italic;
+    }
+
+    .timeline-text {
+      color: #4c4943;
+      max-width: 780px;
+      font-size: 16px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .education-card {
+      background: rgba(255, 250, 242, 0.58);
       border: 1px solid var(--line);
-      border-radius: 28px;
-      background: rgba(250, 245, 237, 0.72);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .education-card h3 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.2vw, 38px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+
+    .education-card .meta {
+      color: var(--rust);
+      font-weight: 800;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .education-card p {
+      color: #4c4943;
+      margin: 0;
+      line-height: 1.75;
+    }
+
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .tool-group {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 250, 242, 0.58);
+      padding: 24px;
+    }
+
+    .tool-group h3 {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rust);
+      font-size: 13px;
+      font-style: italic;
+      margin: 0 0 16px;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tool-list li {
+      border: 1px solid #cdbfad;
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(244, 238, 228, 0.70);
+      color: #38342f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    
+     .systems-flow {
+      position: absolute;
+      right: 4.5%;
+      top: 39%;
+      width: min(430px, 34vw);
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid rgba(216, 203, 187, 0.88);
+      border-radius: 18px;
+      background: rgba(251, 247, 239, 0.58);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
@@ -330,1180 +597,908 @@
     .flow-title {
       font-family: var(--mono);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 13px;
+      letter-spacing: 0.12em;
+      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     .flow-track {
       position: relative;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      align-items: start;
+      gap: 14px;
+      align-items: center;
       margin-bottom: 28px;
-      padding-top: 14px;
     }
 
-    .flow-line {
+    .flow-track::before {
+      content: "";
       position: absolute;
-      left: 7%;
-      right: 7%;
-      top: 36px;
+      left: 8%;
+      right: 8%;
+      top: 22px;
       height: 1px;
-      background: var(--line-strong);
+      background: var(--line);
       z-index: 0;
-    }
-
-    .flow-runner {
-      position: absolute;
-      top: 29px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--rust);
-      box-shadow: 0 0 0 10px rgba(204, 98, 50, 0.16);
-      z-index: 3;
-      transform: translateX(-50%);
-      transition: left 0.55s ease;
     }
 
     .flow-node {
       position: relative;
       z-index: 1;
       display: grid;
-      justify-items: center;
-      gap: 10px;
+      place-items: center;
+      gap: 8px;
       text-align: center;
-      color: var(--muted);
       font-family: var(--mono);
       font-size: 12px;
-      letter-spacing: 0.03em;
+      color: var(--muted);
     }
 
     .flow-dot {
-      width: 58px;
-      height: 58px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 1px solid var(--line-strong);
+      border: 1px solid var(--line);
       background: var(--paper-light);
       display: grid;
       place-items: center;
       font-family: var(--sans);
-      font-size: 26px;
       font-weight: 800;
       color: var(--ink);
-      transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      animation: nodePulse 5.6s ease-in-out infinite;
     }
 
-    .flow-node.active .flow-dot {
-      border-color: var(--rust);
-      color: var(--rust);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 18px rgba(204, 98, 50, 0.12);
+    .flow-node:nth-child(2) .flow-dot {
+      animation-delay: 1.4s;
     }
 
-    .flow-node span {
-      font-size: 12px;
+    .flow-node:nth-child(3) .flow-dot {
+      animation-delay: 2.8s;
+    }
+
+    .flow-node:nth-child(4) .flow-dot {
+      animation-delay: 4.2s;
+    }
+
+    @keyframes nodePulse {
+      0%, 72%, 100% {
+        border-color: var(--line);
+        color: var(--ink);
+        transform: translateY(0);
+      }
+      12%, 24% {
+        border-color: var(--rust);
+        color: var(--rust);
+        transform: translateY(-4px);
+      }
+    }
+
+    .flow-runner {
+      position: absolute;
+      top: 18px;
+      left: 7%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--rust);
+      box-shadow: 0 0 0 8px rgba(196, 87, 47, 0.15);
+      z-index: 2;
+      animation: runnerMove 5.6s ease-in-out infinite;
+    }
+
+    @keyframes runnerMove {
+      0% { left: 7%; }
+      25% { left: 32%; }
+      50% { left: 57%; }
+      75% { left: 82%; }
+      100% { left: 7%; }
     }
 
     .flow-loop {
       border-top: 1px solid var(--line);
-      padding-top: 22px;
+      padding-top: 18px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .loop-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+      justify-content: space-between;
+      gap: 14px;
       font-family: var(--serif);
-      font-size: 24px;
       font-style: italic;
-      line-height: 1;
-      color: #332c26;
-      transition: all 0.3s ease;
+      font-size: 22px;
+      color: #2d2a26;
     }
 
-    .loop-pill.active {
+    .flow-loop span {
       color: var(--rust);
-      border-color: rgba(204, 98, 50, 0.28);
-      background: rgba(204, 98, 50, 0.08);
-    }
-
-    .loop-arrow {
-      font-family: var(--serif);
-      font-size: 28px;
-      color: #4a423a;
-      line-height: 1;
     }
 
     .flow-note {
-      margin-top: 6px;
-      font-size: 16px;
-      color: #564f48;
-      line-height: 1.7;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 46px;
-      align-items: start;
-    }
-
-    .about-intro {
-      font-family: var(--serif);
-      font-size: clamp(52px, 5vw, 90px);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
-      margin: 0 0 28px;
-    }
-
-    .about-copy {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .about-copy p {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.72;
-      color: #403932;
-    }
-
-    .profile-stats {
-      display: grid;
-      gap: 18px;
-      padding-left: 26px;
-      border-left: 1px solid var(--line);
-    }
-
-    .profile-item span {
-      display: block;
-      font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 12px;
+      margin-top: 14px;
+      font-size: 14px;
       color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .profile-item strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 28px;
-      line-height: 1.2;
-      font-weight: 600;
+      line-height: 1.55;
     }
 
     .portrait-card {
+      margin-top: 8px;
       border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(250, 245, 237, 0.8);
+      border-radius: 16px;
+      background: rgba(251, 247, 239, 0.62);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
     .portrait-label {
-      padding: 18px 22px 14px;
+      padding: 18px 18px 14px;
       font-family: var(--serif);
-      font-size: clamp(34px, 3vw, 48px);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
       font-style: italic;
     }
 
-    .portrait-media {
-      position: relative;
-      min-height: 470px;
-      background: linear-gradient(180deg, #efe8dc 0%, #f8f4eb 100%);
-      display: grid;
-      place-items: center;
-      padding: 22px;
+    .portrait-label span {
+      color: var(--rust);
     }
 
     .portrait-img {
       width: 100%;
-      max-height: 480px;
-      object-fit: contain;
-      object-position: center center;
-      filter: blur(16px) saturate(0.88);
-      transform: scale(1.02);
-      transition: filter 0.35s ease, transform 0.35s ease;
-    }
-
-    .portrait-media.revealed .portrait-img {
-      filter: blur(0) saturate(1);
-      transform: scale(1);
-    }
-
-    .portrait-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(
-        to bottom,
-        rgba(243, 238, 228, 0.14),
-        rgba(243, 238, 228, 0.12)
-      );
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .portrait-media.revealed .portrait-overlay {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .reveal-button {
-      border: 1px solid var(--ink);
-      background: rgba(251, 247, 239, 0.92);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 14px 20px;
-      font-weight: 700;
-      font-size: 15px;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(20, 18, 16, 0.08);
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .reveal-button:hover {
-      transform: translateY(-2px);
-      background: #fff;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
     }
 
     .portrait-caption {
-      padding: 14px 22px 20px;
+      padding: 14px 18px 18px;
       font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .work-grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .work-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 250px;
-      gap: 26px;
-      padding: 26px 0;
-      border-top: 1px solid var(--line);
-      align-items: start;
-    }
-
-    .work-card:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .work-title {
-      font-family: var(--serif);
-      font-size: clamp(40px, 4vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      margin: 0 0 14px;
-    }
-
-    .work-text {
-      max-width: 860px;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #413932;
-      margin: 0;
-    }
-
-    .work-meta {
-      text-align: right;
-      display: grid;
-      gap: 10px;
-      justify-items: end;
-      padding-top: 6px;
-    }
-
-    .meta-date {
-      font-family: var(--mono);
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .meta-stack {
-      font-family: var(--serif);
-      font-size: 24px;
-      line-height: 1.32;
-      color: #392f27;
-      text-align: right;
-    }
-
-    .experience-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 26px;
-      align-items: start;
-      padding: 24px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .timeline-item:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .timeline-date {
-      font-family: var(--mono);
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 8px;
-    }
-
-    .timeline-content {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 270px;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .timeline-title {
-      margin: 0 0 8px;
-      font-family: var(--serif);
-      font-size: clamp(36px, 3vw, 58px);
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-    }
-
-    .timeline-org {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--rust);
-      margin-bottom: 12px;
-    }
-
-    .timeline-desc {
-      font-size: 18px;
-      color: #433b34;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .timeline-side {
-      padding-left: 22px;
-      border-left: 1px solid var(--line);
-      display: grid;
-      gap: 10px;
-    }
-
-    .timeline-side span {
-      display: block;
-      font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
       font-size: 12px;
       color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .timeline-side strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 24px;
-      line-height: 1.26;
-      color: #2e2721;
-    }
-
-    .toolkit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .tool-card {
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
-      min-height: 260px;
-    }
-
-    .tool-card h3 {
-      margin: 0 0 16px;
-      font-family: var(--mono);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
     }
-
-    .tool-card p {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(24px, 2.4vw, 44px);
-      line-height: 1.28;
-      font-style: italic;
-      color: #24201d;
-    }
-
-    .contact-wrap {
-      padding: 28px 0 16px;
+    
+    .cert-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
       border-top: 1px solid var(--line);
+      padding-top: 32px;
     }
 
-    .contact-lead {
-      max-width: 980px;
-      font-size: clamp(26px, 2.6vw, 42px);
-      line-height: 1.5;
+    .cert {
+      min-height: 108px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 250, 242, 0.42);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .cert:hover {
+      transform: translateY(-3px);
+      border-color: var(--rust);
+    }
+
+    .cert-no {
+      font-family: var(--mono);
+      color: var(--rust);
+      font-size: 13px;
+    }
+
+    .cert-title {
+      font-size: 16px;
+      line-height: 1.35;
+      color: #292623;
+    }
+
+    .contact-box {
+      background: rgba(233, 223, 208, 0.70);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 42px;
+    }
+
+    .contact-title {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.5vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
       font-style: italic;
-      color: #342e29;
-      margin: 0 0 28px;
+      margin: 0;
+      max-width: 980px;
+    }
+
+    .contact-copy {
+      max-width: 760px;
+      margin: 24px 0 34px;
+      font-size: 19px;
+      color: #3f3b36;
+      font-style: italic;
+      line-height: 1.55;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border: 1px solid var(--line);
-      background: rgba(250, 245, 237, 0.42);
     }
 
-    .contact-card {
-      padding: 22px 24px 24px;
-      min-height: 158px;
+    .contact-cell {
+      padding: 20px;
+      min-height: 112px;
       border-right: 1px solid var(--line);
+      background: rgba(244, 238, 228, 0.62);
+      text-decoration: none;
+      transition: background 0.2s ease;
+      min-width: 0;
     }
 
-    .contact-card:last-child {
-      border-right: 0;
+    .contact-cell:last-child {
+      border-right: none;
     }
 
-    .contact-card span {
+    .contact-cell:hover {
+      background: var(--paper-light);
+    }
+
+    .contact-cell span {
       display: block;
       font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 12px;
       color: var(--muted);
-      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 12px;
+      margin-bottom: 14px;
     }
 
-    .contact-card strong,
-    .contact-card a {
+    .contact-cell strong {
       font-family: var(--serif);
-      font-size: clamp(28px, 2.6vw, 46px);
-      line-height: 1.16;
+      font-size: clamp(18px, 2vw, 22px);
       font-style: italic;
-      word-break: break-word;
+      font-weight: 500;
       overflow-wrap: anywhere;
     }
 
-    .footer {
-      padding: 32px 0 52px;
-      color: var(--muted);
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
       font-family: var(--mono);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
       font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-style: italic;
     }
 
-    @media (max-width: 1200px) {
-      .hero-grid,
-      .about-grid,
-      .about-copy,
-      .timeline-content,
-      .work-card,
-      .toolkit-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+    .fade-in {
+      animation: fadeIn 0.65s ease both;
+    }
 
-      .intro-bar {
-        grid-template-columns: 1fr;
-        gap: 12px;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
       }
-
-      .work-meta,
-      .meta-stack {
-        text-align: left;
-        justify-items: start;
-      }
-
-      .profile-stats,
-      .timeline-side {
-        border-left: 0;
-        padding-left: 0;
-      }
-
-      .tool-card {
-        min-height: auto;
-      }
-
-      .contact-card {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .contact-card:last-child {
-        border-bottom: 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
     @media (max-width: 980px) {
+      .page {
+        width: 100%;
+        border-left: none;
+        border-right: none;
+      }
+
+      .intro-bar,
+      .split,
+      .work-item,
+      .toolkit-grid,
+      .education-grid,
+      .cert-row,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-bar div,
+      .intro-bar div:nth-child(2),
+      .intro-bar div:nth-child(3) {
+        text-align: left;
+      }
+
+      .work-meta {
+        text-align: left;
+      }
+
+      .profile-list {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        padding-top: 28px;
+      }
+
+      .timeline {
+        margin-left: 18px;
+      }
+
+      .rotor-wrap {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-top: 40px;
+        width: 140px;
+        height: 140px;
+      }
+      
+      .systems-flow {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 38px;
+      }
+
+      .portrait-img {
+        height: 320px;
+      }
+      .contact-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .contact-cell:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
       .nav {
-        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
         align-items: flex-start;
-        padding: 14px 0;
+        flex-direction: column;
       }
 
       .nav-links {
-        gap: 16px;
+        flex-wrap: wrap;
+        gap: 14px;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 24px;
+        padding-bottom: 64px;
       }
 
-      .hero-title {
-        font-size: clamp(64px, 15vw, 110px);
+      .hero-actions .button {
+        width: 100%;
       }
 
-      .systems-flow {
-        min-height: auto;
+      .contact-box {
+        padding: 26px;
       }
 
-      .section-title,
-      .about-intro {
-        font-size: clamp(46px, 10vw, 72px);
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-date {
-        padding-top: 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      :root {
-        --container: min(100vw - 28px, 1000px);
-      }
-
-      .brand {
-        white-space: normal;
-      }
-
-      .nav-links {
-        font-size: 14px;
-      }
-
-      .cv-pill {
-        padding: 10px 15px;
-      }
-
-      .hero-title {
-        font-size: clamp(56px, 16vw, 84px);
-      }
-
-      .hero-lead {
-        font-size: 20px;
-      }
-
-      .hero-sub,
-      .timeline-desc,
-      .work-text,
-      .about-copy p {
-        font-size: 17px;
-      }
-
-      .systems-flow {
-        padding: 22px 18px 20px;
-      }
-
-      .flow-track {
-        gap: 8px;
-      }
-
-      .flow-dot {
-        width: 52px;
-        height: 52px;
-        font-size: 22px;
-      }
-
-      .loop-pill {
-        font-size: 20px;
-      }
-
-      .portrait-media {
-        min-height: 390px;
-        padding: 16px;
-      }
-
-      .portrait-img {
-        max-height: 390px;
-      }
-
-      .contact-card strong,
-      .contact-card a {
-        font-size: 22px;
+      footer {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#intro">
-        <span class="brand-dot"></span>
-        <span>Nandish Gowda · Systems Engineer</span>
-      </a>
+  <div class="page">
 
-      <nav class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="#contact">Contact</a>
-        <a class="cv-pill" href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">CV ↗</a>
-      </nav>
-    </div>
-  </header>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand-dot"></span>
+          <span>Nandish Gowda · Systems Engineer</span>
+        </a>
 
-  <main>
-    <section class="hero" id="intro">
-      <div class="container">
-        <div class="intro-bar">
-          <div>§ 00 · Introduction</div>
-          <div class="status-line">
-            <span class="status-dot"></span>
-            <span>Open to full-time roles · Germany</span>
+        <nav class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#toolkit">Toolkit</a>
+          <a href="#contact">Contact</a>
+          <a class="cv-pill" href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">CV ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="hero" id="intro">
+        <div class="container">
+
+          <div class="intro-bar">
+            <div>§ 00 · Introduction</div>
+            <div><span class="status-dot"></span>Open to full-time roles · Germany</div>
+            <div>Stuttgart, DE · Systems Engineering</div>
           </div>
-          <div>Stuttgart, DE · Systems Engineering</div>
-        </div>
 
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 class="hero-title">
-              Nandish Gowda,
-              <span class="accent">structuring</span>
-              systems before they are built.
-            </h1>
+          <h1 class="hero-title fade-in">
+            Nandish Gowda,<br>
+            <span class="accent">structuring</span> systems<br>
+            before they are built.
+          </h1>
 
-            <p class="hero-lead">
-              Systems Engineer focused on MBSE, SysML, requirements engineering,
-              and verification workflows for complex technical systems.
-            </p>
+          <p class="hero-copy fade-in">
+            Systems Engineer focused on MBSE, SysML, requirements engineering, and verification workflows for complex technical systems.
+          </p>
 
-            <p class="hero-sub">
-              I work where stakeholder needs become system architecture, where
-              models become traceable engineering artefacts, and where validation
-              closes the loop.
-            </p>
+          <p class="hero-copy small fade-in">
+            I work where stakeholder needs become system architecture, where models become traceable engineering assets, and where validation closes the loop.
+          </p>
 
-            <div class="hero-actions">
-              <a class="button primary" href="#contact">Get in touch</a>
-              <a class="button ghost" href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">English CV</a>
-              <a class="button ghost" href="assets/CV/Lebenslauf_Nandish_SB_N.pdf" target="_blank">German CV</a>
-            </div>
+          <div class="hero-actions fade-in">
+            <a class="button primary" href="#work">See selected work →</a>
+            <a class="button ghost" href="mailto:nandish0721@gmail.com">Get in touch</a>
+            <a class="button ghost" href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">English CV</a>
+            <a class="button ghost" href="assets/CV/Lebenslauf_Nandish_SB_N.pdf" target="_blank">German CV</a>
           </div>
 
           <div class="systems-flow" aria-label="Systems engineering lifecycle visual">
             <div class="flow-title">Traceability flow</div>
 
-            <div class="flow-track" id="flowTrack">
-              <div class="flow-line"></div>
-              <div class="flow-runner" id="flowRunner"></div>
+            <div class="flow-track">
+              <div class="flow-runner"></div>
 
-              <div class="flow-node active" data-step="0">
+              <div class="flow-node">
                 <div class="flow-dot">01</div>
-                <span>Need</span>
+                <div>Need</div>
               </div>
 
-              <div class="flow-node" data-step="1">
+              <div class="flow-node">
                 <div class="flow-dot">02</div>
-                <span>Model</span>
+                <div>Model</div>
               </div>
 
-              <div class="flow-node" data-step="2">
+              <div class="flow-node">
                 <div class="flow-dot">03</div>
-                <span>Verify</span>
+                <div>Verify</div>
               </div>
 
-              <div class="flow-node" data-step="3">
+              <div class="flow-node">
                 <div class="flow-dot">04</div>
-                <span>Implement</span>
+                <div>Implement</div>
               </div>
             </div>
 
-            <div class="flow-loop" id="flowLoop">
-              <span class="loop-pill active" data-loop="0">Need</span>
-              <span class="loop-arrow">→</span>
-              <span class="loop-pill" data-loop="1">Model</span>
-              <span class="loop-arrow">→</span>
-              <span class="loop-pill" data-loop="2">Verify</span>
-              <span class="loop-arrow">→</span>
-              <span class="loop-pill" data-loop="3">Implement</span>
-              <span class="loop-arrow">→</span>
-              <span class="loop-pill" data-loop="4">Improve</span>
-              <span class="loop-arrow">→</span>
-              <span class="loop-pill" data-loop="5">Need</span>
+            <div class="flow-loop">
+              <div>Implement</div>
+              <div>→</div>
+              <span>Improve</span>
+              <div>→</div>
+              <div>Need</div>
             </div>
 
             <div class="flow-note">
-              A small loop for how I think: understand the need, model the system,
-              verify the logic, implement the solution, improve the result, and
-              start the next cycle with better insight.
+              A small loop for how I think: capture the need, model the system, verify the logic, implement the solution, and improve it again.
             </div>
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about">
-      <div class="container section-shell">
-        <div class="section-label">§ 01 · Profile</div>
+      <section id="about">
+        <div class="container">
+          <div class="section-label">§ 01 · Profile</div>
 
-        <div class="about-grid">
-          <div>
-            <h2 class="about-intro">
-              An engineer working between
-              <span class="accent">requirements</span>,
-              models, and validation.
-            </h2>
+          <h2 class="section-title">
+            An engineer working between <span class="accent">requirements</span>, models, and validation.
+          </h2>
 
-            <div class="about-copy">
-              <p>
-                I am a Systems Engineering graduate based in Stuttgart, with industrial
-                experience at Bosch Home Comfort across requirements engineering,
-                model-based systems engineering, product line engineering, and virtual
-                testing. My work has focused on traceability, system modelling, and
-                connecting requirements to validation artefacts in a structured way.
-              </p>
+          <div class="split">
+            <p class="lead-text">
+              I am a Systems Engineering graduate based in Stuttgart, with industrial experience at Bosch Home Comfort across requirements engineering, model-based systems engineering, product line engineering, and virtual validation support.
+            </p>
 
-              <div class="profile-stats">
-                <div class="profile-item">
-                  <span>Based in</span>
-                  <strong>Stuttgart, Germany</strong>
+            <div class="profile-list">
+              <div class="profile-item">
+                <span>Based in</span>
+                <strong>Stuttgart, Germany</strong>
+              </div>
+
+              <div class="profile-item">
+                <span>Focus</span>
+                <strong>MBSE · SysML · Requirements · Traceability · V&V</strong>
+              </div>
+
+              <div class="profile-item">
+                <span>Open to</span>
+                <strong>Systems Engineering · Requirements Engineering · MBSE · V&V roles</strong>
+              </div>
+
+              <div class="profile-item">
+                <span>Languages</span>
+                <strong>English · German · Hindi · Kannada</strong>
+              </div>
+                            <div class="portrait-card">
+                <div class="portrait-label">
+                  The person behind the <span>systems.</span>
                 </div>
 
-                <div class="profile-item">
-                  <span>Focus</span>
-                  <strong>MBSE · SysML · Requirements · Traceability · V&amp;V</strong>
-                </div>
+                <img
+                  class="portrait-img"
+                  src="assets/Pics/Profile%20pic.png"
+                  alt="Portrait of Nandish Gowda"
+                />
 
-                <div class="profile-item">
-                  <span>Languages</span>
-                  <strong>English · German · Hindi · Kannada</strong>
+                <div class="portrait-caption">
+                  Nandish Gowda · Stuttgart, Germany
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="portrait-card">
-            <div class="portrait-label">
-              The person behind the <span>systems.</span>
-            </div>
-
-            <div class="portrait-media" id="portraitMedia">
-              <img
-                class="portrait-img"
-                src="assets/Pics/Profile%20pic.png"
-                alt="Portrait of Nandish Gowda"
-              />
-              <div class="portrait-overlay">
-                <button class="reveal-button" id="revealButton" type="button">
-                  Click to reveal the face
-                </button>
-              </div>
-            </div>
-
-            <div class="portrait-caption">
-              Nandish Gowda · Stuttgart, Germany
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="work">
-      <div class="container section-shell">
-        <div class="section-label">§ 02 · Selected Work</div>
+      <section id="work">
+        <div class="container">
+          <div class="section-label">§ 02 · Selected Work</div>
 
-        <div class="work-grid">
-          <article class="work-card">
-            <div>
-              <h3 class="work-title">Feature Modeling for Heat Pump Product Lines</h3>
-              <p class="work-text">
-                Developed a thesis-focused concept around feature modelling,
-                variability management, and MBPLE for configurable heat pump systems,
-                with an emphasis on traceability between product features and
-                engineering-oriented system artefacts.
-              </p>
-            </div>
+          <h2 class="section-title">
+            Work shaped around <span class="accent">traceability</span>, reuse, and engineering structure.
+          </h2>
 
-            <div class="work-meta">
-              <div class="meta-date">2024</div>
-              <div class="meta-stack">
-                Master Thesis · Bosch Home Comfort<br />
+          <div class="work-list">
+
+            <article class="work-item">
+              <div class="work-no">01 /</div>
+              <div class="work-main">
+                <h3>MBPLE for Configurable Heat Pump Systems</h3>
+                <p>
+                  Developed a model-based product line engineering approach for configurable heat pump systems, connecting MBSE, feature modelling, variant modelling, and reuse-oriented engineering assets.
+                </p>
+                <div class="tags">
+                  <span class="tag">MBSE</span>
+                  <span class="tag">SysML</span>
+                  <span class="tag">Cameo</span>
+                  <span class="tag">Pure::Variants</span>
+                  <span class="tag">Traceability</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                2024<br>
+                Master Thesis · Bosch Home Comfort<br>
                 Grade 1.1
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="work-card">
-            <div>
-              <h3 class="work-title">Requirements Engineering Dry Run</h3>
-              <p class="work-text">
-                Supported structured requirement analysis, review preparation,
-                and traceability activities while contributing to a growing
-                requirements engineering framework in an industrial product
-                development environment.
-              </p>
-            </div>
-
-            <div class="work-meta">
-              <div class="meta-date">2023 – 2024</div>
-              <div class="meta-stack">
-                Internship · Bosch Home Comfort<br />
+            <article class="work-item">
+              <div class="work-no">02 /</div>
+              <div class="work-main">
+                <h3>Requirements Engineering Dry Run</h3>
+                <p>
+                  Supported a pilot requirements engineering workflow for HVAC development, including structured requirement levels, requirement libraries, reviews, active links, and traceability matrices.
+                </p>
+                <div class="tags">
+                  <span class="tag">Jira R4J</span>
+                  <span class="tag">DOORS</span>
+                  <span class="tag">V-Model</span>
+                  <span class="tag">Traceability</span>
+                  <span class="tag">Requirements</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                2023 to 2024<br>
+                Internship · Bosch Home Comfort<br>
                 Requirements Engineering
               </div>
-            </div>
-          </article>
+            </article>
+
+            <article class="work-item">
+              <div class="work-no">03 /</div>
+              <div class="work-main">
+                <h3>Virtual Testing and Validation Support</h3>
+                <p>
+                  Connected requirements, system models, and verification artefacts within V-Model workflows, supporting system-level validation and virtual test activities using MATLAB and Simulink.
+                </p>
+                <div class="tags">
+                  <span class="tag">MATLAB</span>
+                  <span class="tag">Simulink</span>
+                  <span class="tag">V&V</span>
+                  <span class="tag">HVAC</span>
+                  <span class="tag">MBSE Workflow</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                2025<br>
+                Bosch Home Comfort<br>
+                Virtual Testing
+              </div>
+            </article>
+
+            <article class="work-item">
+              <div class="work-no">04 /</div>
+              <div class="work-main">
+                <h3>SysML-based System Decomposition</h3>
+                <p>
+                  Built and maintained system model structures to support architecture understanding, stakeholder views, interface thinking, and traceability between requirements, models, and verification activities.
+                </p>
+                <div class="tags">
+                  <span class="tag">SysML</span>
+                  <span class="tag">Cameo</span>
+                  <span class="tag">System Architecture</span>
+                  <span class="tag">Interfaces</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                2025<br>
+                Industrial · MBSE<br>
+                Systems Engineering
+              </div>
+            </article>
+
+            <article class="work-item">
+              <div class="work-no">05 /</div>
+              <div class="work-main">
+                <h3>Zero-G RC Aircraft Requirements Project</h3>
+                <p>
+                  Applied systems engineering and V-Model thinking to an academic aircraft project, from requirements definition and system integration to verification and validation.
+                </p>
+                <div class="tags">
+                  <span class="tag">V-Model</span>
+                  <span class="tag">Requirements</span>
+                  <span class="tag">System Integration</span>
+                  <span class="tag">Validation</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                Academic<br>
+                OvGU Magdeburg<br>
+                Systems Engineering
+              </div>
+            </article>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience">
-      <div class="container section-shell">
-        <div class="section-label">§ 03 · Experience</div>
+      <section id="experience">
+        <div class="container">
+          <div class="section-label">§ 03 · Experience</div>
 
-        <div class="experience-grid">
-          <article class="timeline-item">
-            <div class="timeline-date">Mar 2025 – Aug 2025</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">Systems &amp; Requirements Engineering in Virtual Testing</h3>
-                <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
-                <p class="timeline-desc">
-                  Worked on system-level virtual testing activities, linked requirements
-                  with engineering artefacts, and supported model-based validation using
-                  MATLAB/Simulink in a structured systems engineering workflow.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Focus</span>
-                  <strong>Virtual testing · V&amp;V · Traceability</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+          <h2 class="section-title">
+            Industrial experience across <span class="accent">requirements</span>, MBSE, and validation.
+          </h2>
 
-          <article class="timeline-item">
-            <div class="timeline-date">Jul 2024 – Dec 2024</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">Model-Based Product Line Engineering</h3>
-                <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
-                <p class="timeline-desc">
-                  Contributed to variability management and feature-oriented system
-                  modelling for product families, with a focus on connecting systems
-                  engineering methods and product line engineering concepts.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Focus</span>
-                  <strong>MBPLE · Variability · Feature modelling</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+          <div class="timeline">
 
-          <article class="timeline-item">
-            <div class="timeline-date">Dec 2023 – Jun 2024</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">Requirements Engineering Intern</h3>
-                <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
-                <p class="timeline-desc">
-                  Supported the development of requirements libraries, review activities,
-                  and traceability structures, while working with requirements data and
-                  improving clarity across engineering documentation.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Focus</span>
-                  <strong>Requirements · Reviews · Lifecycle management</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+            <article class="timeline-item active">
+              <div class="timeline-date">March 2025 to August 2025</div>
+              <h3 class="timeline-title">Systems & Requirements Engineering in Virtual Testing</h3>
+              <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
+              <p class="timeline-text">
+                Developed SysML-based system models, integrated requirements with system models and verification artefacts, and supported system-level virtual validation using MATLAB/Simulink.
+              </p>
+            </article>
 
-          <article class="timeline-item">
-            <div class="timeline-date">Apr 2019 – Aug 2021</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">Production Engineer</h3>
-                <div class="timeline-org">Saft India · Bengaluru, India</div>
-                <p class="timeline-desc">
-                  Supported research and development of Ni-Cd and Li-ion battery packs
-                  and contributed to manufacturing and development activities in an
-                  industrial production environment.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Focus</span>
-                  <strong>Production · Industrial engineering · Product development</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+            <article class="timeline-item">
+              <div class="timeline-date">July 2024 to December 2024</div>
+              <h3 class="timeline-title">Master Thesis · Model-Based Product Line Engineering</h3>
+              <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
+              <p class="timeline-text">
+                Developed an MBSE-based product line engineering approach for configurable heat pump systems, with feature modelling, variability management, and traceability workflows. Thesis grade: 1.1.
+              </p>
+            </article>
 
-          <article class="timeline-item">
-            <div class="timeline-date">Nov 2018 – Aug 2021</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">Maintenance Engineer – Plant &amp; Industrial Systems</h3>
-                <div class="timeline-org">AUMA India Pvt. Ltd. · Bengaluru, India</div>
-                <p class="timeline-desc">
-                  Executed preventive and corrective maintenance activities for industrial
-                  production machines and plant utility systems, while supporting
-                  troubleshooting, reliability improvement, and service coordination.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Focus</span>
-                  <strong>Maintenance · Reliability · Plant systems</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+            <article class="timeline-item">
+              <div class="timeline-date">December 2023 to June 2024</div>
+              <h3 class="timeline-title">Requirements Engineering Internship</h3>
+              <div class="timeline-org">Bosch Home Comfort · Wernau, Germany</div>
+              <p class="timeline-text">
+                Developed a Dry Run pilot requirements project, maintained requirement libraries and reviews in Jira, and supported change and configuration management through consistency checks.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">April 2019 to August 2021</div>
+              <h3 class="timeline-title">Production Engineer</h3>
+              <div class="timeline-org">Saft India · Bengaluru, India</div>
+              <p class="timeline-text">
+                Supported research and development of Ni-Cd and Li-ion battery packs and contributed to manufacturing and development activities in an industrial production environment.
+              </p>
+            </article>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education">
-      <div class="container section-shell">
-        <div class="section-label">§ 04 · Education</div>
+      <section id="education">
+        <div class="container">
+          <div class="section-label">§ 04 · Education</div>
 
-        <div class="experience-grid">
-          <article class="timeline-item">
-            <div class="timeline-date">Oct 2021 – Sep 2025</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">M.Sc. Systems Engineering for Manufacturing</h3>
-                <div class="timeline-org">Otto von Guericke University Magdeburg · Germany</div>
-                <p class="timeline-desc">
-                  Focused on systems engineering, MBSE, product line engineering,
-                  production systems, and model-based engineering methods.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Final grade</span>
-                  <strong>1.65</strong>
-                </div>
-                <div>
-                  <span>Focus areas</span>
-                  <strong>MBSE · Product line engineering · Production systems</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+          <h2 class="section-title">
+            Academic foundation in <span class="accent">systems</span> and mechanical engineering.
+          </h2>
 
-          <article class="timeline-item">
-            <div class="timeline-date">Aug 2013 – Jul 2017</div>
-            <div class="timeline-content">
-              <div>
-                <h3 class="timeline-title">B.E. Mechanical Engineering</h3>
-                <div class="timeline-org">Visvesvaraya Technological University, Bengaluru · India</div>
-                <p class="timeline-desc">
-                  Built a strong foundation in mechanical engineering, design,
-                  manufacturing, and technical problem solving.
-                </p>
-              </div>
-              <div class="timeline-side">
-                <div>
-                  <span>Core areas</span>
-                  <strong>Mechanical systems · Manufacturing · Engineering fundamentals</strong>
-                </div>
-              </div>
-            </div>
-          </article>
+          <div class="education-grid">
+            <article class="education-card">
+              <h3>M.Sc. Systems Engineering for Manufacturing</h3>
+              <div class="meta">Otto von Guericke University Magdeburg · 10.2021 to 09.2025</div>
+              <p>
+                Focused on systems engineering, MBSE, product line engineering, production systems, and model-based engineering methods. Final grade: 1.65.
+              </p>
+            </article>
+
+            <article class="education-card">
+              <h3>B.E. Mechanical Engineering</h3>
+              <div class="meta">Visvesvaraya Technological University, Bengaluru · 08.2013 to 07.2017</div>
+              <p>
+                Built the foundation in mechanical design, manufacturing, engineering analysis, and production systems. Thesis: Design Optimisation of a Centre Fuselage Jig for Ammunition Box Installation.
+              </p>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="toolkit">
-      <div class="container section-shell">
-        <div class="section-label">§ 05 · Toolkit</div>
+      <section id="toolkit">
+        <div class="container">
+          <div class="section-label">§ 05 · Toolkit</div>
 
-        <h2 class="section-title">
-          Tools that help me build
-          <span class="accent">bridges</span>
-          between engineering artefacts.
-        </h2>
+          <h2 class="section-title">
+            Tools that help connect <span class="accent">requirements</span>, models, and verification.
+          </h2>
 
-        <div class="toolkit-grid">
-          <article class="tool-card">
-            <h3>Requirements &amp; lifecycle</h3>
-            <p>
-              IBM DOORS · Jira R4J · Polarion · requirement reviews ·
-              traceability matrices · lifecycle management
-            </p>
-          </article>
+          <div class="toolkit-grid">
 
-          <article class="tool-card">
-            <h3>Systems &amp; modelling</h3>
-            <p>
-              SysML · UML · Cameo Systems Modeler · Enterprise Architect ·
-              MBSE · system architecture
-            </p>
-          </article>
+            <div class="tool-group">
+              <h3>Requirements & Lifecycle</h3>
+              <ul class="tool-list">
+                <li>IBM DOORS</li>
+                <li>Jira R4J</li>
+                <li>Polarion</li>
+                <li>Requirement Reviews</li>
+                <li>Traceability Matrices</li>
+                <li>Lifecycle Management</li>
+              </ul>
+            </div>
 
-          <article class="tool-card">
-            <h3>Simulation &amp; validation</h3>
-            <p>
-              MATLAB · Simulink · virtual testing · V-Model · verification ·
-              validation · system-level testing
-            </p>
-          </article>
+            <div class="tool-group">
+              <h3>Systems & MBSE</h3>
+              <ul class="tool-list">
+                <li>SysML</li>
+                <li>UML</li>
+                <li>Cameo Systems Modeler</li>
+                <li>Enterprise Architect</li>
+                <li>System Architecture</li>
+                <li>System Decomposition</li>
+              </ul>
+            </div>
+
+            <div class="tool-group">
+              <h3>Simulation & Validation</h3>
+              <ul class="tool-list">
+                <li>MATLAB</li>
+                <li>Simulink</li>
+                <li>Virtual Testing</li>
+                <li>V-Model</li>
+                <li>Verification</li>
+                <li>Validation</li>
+              </ul>
+            </div>
+
+            <div class="tool-group">
+              <h3>Product Line & Variability</h3>
+              <ul class="tool-list">
+                <li>MBPLE</li>
+                <li>Feature Modelling</li>
+                <li>Variant Modelling</li>
+                <li>Pure::Variants</li>
+                <li>Modularisation</li>
+                <li>Reuse-oriented Engineering</li>
+              </ul>
+            </div>
+
+            <div class="tool-group">
+              <h3>Programming & Data</h3>
+              <ul class="tool-list">
+                <li>Python</li>
+                <li>C</li>
+                <li>Power BI</li>
+                <li>LSTM-based ML</li>
+                <li>Structured Analysis</li>
+              </ul>
+            </div>
+
+            <div class="tool-group">
+              <h3>CAD & Engineering Analysis</h3>
+              <ul class="tool-list">
+                <li>CATIA</li>
+                <li>Hypermesh</li>
+                <li>Ansys</li>
+                <li>Mechanical Engineering</li>
+                <li>Technical Documentation</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact">
-      <div class="container section-shell">
-        <div class="section-label">§ 06 · Contact</div>
+      <section id="certifications">
+        <div class="container">
+          <div class="section-label">§ 06 · Certifications & Engagement</div>
 
-        <h2 class="section-title">
-          Need someone who can connect
-          <span class="accent">requirements</span>,
-          models, and validation?
-        </h2>
-
-        <p class="contact-lead">
-          I am open to full-time roles in Systems Engineering, Requirements Engineering,
-          MBSE, System Architecture, Verification and Validation, and product development.
-        </p>
-
-        <div class="contact-wrap">
-          <div class="contact-grid">
-            <div class="contact-card">
-              <span>Email</span>
-              <a href="mailto:nandish0721@gmail.com">nandish0721@gmail.com</a>
+          <div class="cert-row">
+            <div class="cert">
+              <span class="cert-no">01</span>
+              <span class="cert-title">IREB CPRE · Foundation Level</span>
             </div>
 
-            <div class="contact-card">
-              <span>LinkedIn</span>
-              <a
-                href="https://www.linkedin.com/in/nandish-gowda-a-s/"
-                target="_blank"
-                rel="noreferrer"
-              >/nandish-gowda-a-s</a>
+            <div class="cert">
+              <span class="cert-no">02</span>
+              <span class="cert-title">MBSE Methods and SysML Best Practices</span>
             </div>
 
-            <div class="contact-card">
-              <span>CV</span>
-              <a href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">English CV ↗</a>
+            <div class="cert">
+              <span class="cert-no">03</span>
+              <span class="cert-title">Frugal Engineering publication · OvGU</span>
             </div>
 
-            <div class="contact-card">
-              <span>Lebenslauf</span>
-              <a href="assets/CV/Lebenslauf_Nandish_SB_N.pdf" target="_blank">German CV ↗</a>
+            <div class="cert">
+              <span class="cert-no">04</span>
+              <span class="cert-title">Vice President · Business Development · DEGIS e.V.</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      Nandish Gowda · Portfolio · Systems Engineering · MBSE · Requirements
-    </div>
-  </footer>
+      <section id="contact">
+        <div class="container">
+          <div class="contact-box">
+            <h2 class="contact-title">
+              Need someone who can connect <span class="accent">requirements</span>, models, and validation?
+            </h2>
 
-  <script>
-    const portraitMedia = document.getElementById("portraitMedia");
-    const revealButton = document.getElementById("revealButton");
+            <p class="contact-copy">
+              I am open to full-time roles in Systems Engineering, Requirements Engineering, MBSE, System Architecture, Verification and Validation, and product development.
+            </p>
 
-    if (portraitMedia && revealButton) {
-      revealButton.addEventListener("click", () => {
-        portraitMedia.classList.toggle("revealed");
-        const shown = portraitMedia.classList.contains("revealed");
-        revealButton.textContent = shown ? "Face revealed" : "Click to reveal the face";
-      });
-    }
+            <div class="contact-grid">
+              <a class="contact-cell" href="mailto:nandish0721@gmail.com">
+                <span>Email</span>
+                <strong>nandish0721@gmail.com</strong>
+              </a>
 
-    const flowTrack = document.getElementById("flowTrack");
-    const flowRunner = document.getElementById("flowRunner");
-    const flowNodes = [...document.querySelectorAll(".flow-node")];
-    const loopPills = [...document.querySelectorAll(".loop-pill")];
+              <a class="contact-cell" href="https://www.linkedin.com/in/nandish-gowda-a-s" target="_blank">
+                <span>LinkedIn</span>
+                <strong>/nandish-gowda-a-s</strong>
+              </a>
 
-    let currentStep = 0;
+              <a class="contact-cell" href="assets/CV/Resume_Nandish_SB.pdf" target="_blank">
+                <span>CV</span>
+                <strong>English CV ↗</strong>
+              </a>
 
-    function updateFlow(step) {
-      flowNodes.forEach((node, index) => {
-        node.classList.toggle("active", index === step);
-      });
+              <a class="contact-cell" href="assets/CV/Lebenslauf_Nandish_SB_N.pdf" target="_blank">
+                <span>Lebenslauf</span>
+                <strong>German CV ↗</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      loopPills.forEach((pill, index) => {
-        pill.classList.remove("active");
-      });
+    </main>
 
-      // Need -> Model -> Verify -> Implement -> Improve -> Need
-      const activeLoopOrder = [0, 1, 2, 3, 4, 5];
-      const mapped = activeLoopOrder[step];
-      if (loopPills[mapped]) {
-        loopPills[mapped].classList.add("active");
-      }
-      if (step === 3 && loopPills[4]) {
-        loopPills[4].classList.add("active");
-      }
+    <footer class="container">
+      <div>© 2026 Nandish Gowda · Stuttgart, Germany</div>
+      <div>Last updated · April 2026</div>
+    </footer>
 
-      const activeDot = flowNodes[step]?.querySelector(".flow-dot");
-      if (!activeDot || !flowRunner || !flowTrack) return;
-
-      const trackRect = flowTrack.getBoundingClientRect();
-      const dotRect = activeDot.getBoundingClientRect();
-      const left = dotRect.left - trackRect.left + dotRect.width / 2;
-      flowRunner.style.left = `${left}px`;
-    }
-
-    function advanceFlow() {
-      currentStep = (currentStep + 1) % flowNodes.length;
-      updateFlow(currentStep);
-    }
-
-    window.addEventListener("load", () => updateFlow(currentStep));
-    window.addEventListener("resize", () => updateFlow(currentStep));
-    setInterval(advanceFlow, 1800);
-  </script>
+  </div>
 </body>
 </html>
